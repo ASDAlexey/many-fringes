@@ -1,0 +1,18 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "relationalDB": {
+    "name": "relationalDB",
+    "connector": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "1234",
+    "database": "many-fringes",
+    "createDatabase": true,
+    "charset": "utf8",
+    "collation": "utf8_general_ci"
+  }
+}

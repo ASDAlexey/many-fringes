@@ -1,0 +1,41 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "email": {
+      "type": "string",
+      "index": {
+        "unique": true
+      },
+      "mysql": {
+        "dataType": "VARCHAR",
+        "dataLength": 50
+      },
+      "nullable": false
+    },
+    "password": {
+      "type": "string",
+      "mysql": {
+        "dataType": "VARCHAR",
+        "dataLength": 60
+      },
+      "nullable": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "projects": {
+      "type": "hasMany",
+      "model": "project",
+      "foreignKey": "ownerId"
+    },
+    "teams": {
+      "type": "hasMany",
+      "model": "team",
+      "foreignKey": "ownerId"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
