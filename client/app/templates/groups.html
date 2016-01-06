@@ -1,0 +1,8 @@
+<h1>Groups</h1>
+<ul ng-repeat="group in groups">
+	<li>{{group}}</li>
+</ul>
+user.id: {{user.id}}
+<li ng-class="{ active: isActive('/groups') }" ng-show="user.id">
+	<a ng-href="/groups">Groups</a>
+</li>

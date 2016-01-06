@@ -1,0 +1,44 @@
+/* вынесем все переменные, которые хотим сделать регулируемыми в аргументы по умолчанию */
+@mixin grid($width:960px,
+$gutter:20px,
+$columns:12,
+$prefix:false,
+$push:true) {
+	$column_width:$width/$columns;
+
+	.grid{
+		display:inline;
+		float:left;
+		margin-left:$gutter/ 2;
+		margin-right:$gutter/2;
+	}
+
+	@for $i from 1 through $columns{
+		.grid_#{$i}{
+			@extend .grid;
+			width:$i * $column_width - $gutter;
+		}
+
+		@if $prefix == true{
+			.prefix_#{$i}{
+				padding-left:$i * $column_width;
+			}
+
+			.suffix_#{$i}{
+				padding-right:$i * $column_width;
+			}
+		}
+
+		@if $push == true{
+			.push_#{$i}{
+				left:$i * $column_width;
+			}
+
+			.pull_#{$i}{
+				left:-$i * $column_width;
+			}
+		}
+
+	}
+
+}

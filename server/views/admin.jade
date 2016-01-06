@@ -1,5 +1,87 @@
-| Приватная страница приложения
-img(src="images/1.jpeg")
-a(href="/logout") Выйти
-script(src="//code.jquery.com/jquery-1.11.3.min.js")
-script(src="scripts/scripts.js")
+//| Приватная страница приложения
+//img(src="images/1.jpeg")
+//a(href="/logout") Выйти
+//script(src="//code.jquery.com/jquery-1.11.3.min.js")
+//script(src="scripts/scripts.js")
+doctype html
+html
+  head
+    title Many Fringes Admin
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Cache-Control', content='no-cache')
+    base(href='/')
+    link(rel='stylesheet', href='admin/styles/application.css')
+  body
+    .wrapper(ng-class="{'no-sign-in':isAdmin}")
+      main.main(ng-controller='AdminCtrl as admin')
+        header.header(ng-if='isAdmin')
+          a.wrapper-logo(href='admin-panel/main')
+            img(src='admin/images/logo.png', alt='dev-logo', title='link to site')
+          .content-header
+            h1 &Ucy;&pcy;&rcy;&acy;&vcy;&lcy;&iecy;&ncy;&icy;&iecy; &scy;&acy;&jcy;&tcy;&ocy;&mcy; Manyfringes.com
+          a.icon-logout.logout(href='./logout')
+        .wrapper-content
+          aside.aside(ng-controller='AsideCtrl as aside', ng-if='isAdmin')
+            a.switcher-aside.icon-menu(href='')
+            ul.list-section
+              li
+                a(ng-href='admin-panel/main', ng-class="{'active':isStringFinded(currentPage,'/admin-panel/main')}")
+                  i.icon-settings
+                  | &Ocy;&scy;&ncy;&ocy;&vcy;&ncy;&ycy;&iecy; &ncy;&acy;&scy;&tcy;&rcy;&ocy;&jcy;&kcy;&icy;
+              li
+                a(ng-href='admin-panel/categories', ng-class="{'active':isStringFinded(currentPage,'/admin-panel/categories')}")
+                  i.icon-categories
+                  | &Scy;&pcy;&icy;&scy;&ocy;&kcy; &kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&icy;&jcy;
+              li
+                a(ng-href='admin-panel/articles', ng-class="{'active':isStringFinded(currentPage,'/admin-panel/articles')}")
+                  i.icon-articles
+                  | &Scy;&pcy;&icy;&scy;&ocy;&kcy; &scy;&tcy;&acy;&tcy;&iecy;&jcy;
+              li
+                a(href='', ng-click='admin.toSite()')
+                  i.icon-logout
+                  | &Pcy;&iecy;&rcy;&iecy;&jcy;&tcy;&icy; &ncy;&acy; &scy;&acy;&jcy;&tcy;
+          .content-block
+            ng-view.wrapper-view
+    script(src='http://localhost:8080/webpack-dev-server.js')
+    script(src='http://localhost:8080/bundle.js')
+doctype html
+html
+  head
+    title Many Fringes Admin
+    meta(http-equiv='Pragma', content='no-cache')
+    meta(http-equiv='Cache-Control', content='no-cache')
+    base(href='/')
+    link(rel='stylesheet', href='admin/styles/application.css')
+  body
+    .wrapper(ng-class="{'no-sign-in':isAdmin}")
+      main.main(ng-controller='AdminCtrl as admin')
+        header.header(ng-if='isAdmin')
+          a.wrapper-logo(href='admin-panel/main')
+            img(src='admin/images/logo.png', alt='dev-logo', title='link to site')
+          .content-header
+            h1 &Ucy;&pcy;&rcy;&acy;&vcy;&lcy;&iecy;&ncy;&icy;&iecy; &scy;&acy;&jcy;&tcy;&ocy;&mcy; Manyfringes.com
+          a.icon-logout.logout(href='./logout')
+        .wrapper-content
+          aside.aside(ng-controller='AsideCtrl as aside', ng-if='isAdmin')
+            a.switcher-aside.icon-menu(href='')
+            ul.list-section
+              li
+                a(ng-href='admin-panel/main', ng-class="{'active':isStringFinded(currentPage,'/admin-panel/main')}")
+                  i.icon-settings
+                  | &Ocy;&scy;&ncy;&ocy;&vcy;&ncy;&ycy;&iecy; &ncy;&acy;&scy;&tcy;&rcy;&ocy;&jcy;&kcy;&icy;
+              li
+                a(ng-href='admin-panel/categories', ng-class="{'active':isStringFinded(currentPage,'/admin-panel/categories')}")
+                  i.icon-categories
+                  | &Scy;&pcy;&icy;&scy;&ocy;&kcy; &kcy;&acy;&tcy;&iecy;&gcy;&ocy;&rcy;&icy;&jcy;
+              li
+                a(ng-href='admin-panel/articles', ng-class="{'active':isStringFinded(currentPage,'/admin-panel/articles')}")
+                  i.icon-articles
+                  | &Scy;&pcy;&icy;&scy;&ocy;&kcy; &scy;&tcy;&acy;&tcy;&iecy;&jcy;
+              li
+                a(href='', ng-click='admin.toSite()')
+                  i.icon-logout
+                  | &Pcy;&iecy;&rcy;&iecy;&jcy;&tcy;&icy; &ncy;&acy; &scy;&acy;&jcy;&tcy;
+          .content-block
+            ng-view.wrapper-view
+    script(src='http://localhost:8080/webpack-dev-server.js')
+    script(src='http://localhost:8080/bundle.js')

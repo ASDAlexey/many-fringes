@@ -1,1 +1,40 @@
-| Публичная страница приложения
+//| Публичная страница приложения
+doctype html
+html(ng-app)
+  head
+    title Many Fringes
+    base(href='/')
+    link(rel='stylesheet', href='app/stylesheets/application.css')
+    body(ng-controller='scrollCtrl')
+      section.preloader(preloader='')
+        .preloader-content
+          .progress
+            span(ng-bind-template='{{persent}}') 0
+            span %
+      rotation-drag-menu(abs-url='{{absUrl}}', menu='[{"text":"Гороскопы","src":"zodiac.jpg","link":"horoscopes"},{"text":"Гадания","src":"devination.jpg","link":"divination"},{"text":"Наши сны","src":"dream_interpretation.jpg","link":"our_dreams"},{"text":"Протести- руй себя","src":"tests.jpg","link":"test_yourself"},{"text":"Красота и здоровье","src":"beauty_and_health.jpg","link":"beauty_and_health"},{"text":"Вкусности","src":"food.jpg","link":"delicious"},{"text":"Имена","src":"names.jpg","link":"what_is_it_in_my_name"}]')
+      .wrapper
+        header.header
+          a.wrapper-logo(href='/')
+            img(src="app/images/logo.png", alt='logo', title='logo')
+          .also-articles-slider
+            bxslider(url='headerSlider', options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}')
+          .authentication-block
+            ul.nav.nav-pills.pull-right
+              li(ng-show='!user.id')
+                a(href='/sign_in') &Vcy;&khcy;&ocy;&dcy;
+              li(ng-show='!user.id')
+                a(href='/sign_up') &Rcy;&iecy;&gcy;&icy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy;
+              li(ng-show='user.id')
+                a(ng-click='signOut()') &Vcy;&ycy;&khcy;&ocy;&dcy;
+        // menu
+        main.main
+          section.content
+            ui-view.wrapper-view(ng-render='', ng-render-inside='')
+        footer.footer
+          .copyright &copy; 2015 &ldquo;Manyfringes.com&rdquo;
+          a.contacts(href='') &Ocy;&bcy;&rcy;&acy;&tcy;&ncy;&acy;&yacy; &scy;&vcy;&yacy;&zcy;&softcy;
+          section.footer-nav
+            // site menu
+        #up.up(scroll='', ng-click="scrollToElement('body', 0, 700)", scroll-up='')
+          draw-svg(width='80', height='80', elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]")
+      script(data-main="app/javascripts/application" src="app/javascripts/vendor/require.js")

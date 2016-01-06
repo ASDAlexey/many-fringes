@@ -1,9 +1,9 @@
 module.exports=function(app){
   var router=app.loopback.Router();
 
-  router.get('/',function(req,res){
-    res.render('index',{});
-  });
+  //router.get('/',function(req,res){
+  //  res.render('index',{});
+  //});
 
   router.get('/admin',function(req,res){
     res.render('login');
@@ -38,6 +38,15 @@ module.exports=function(app){
     var token=new AccessToken({id:req.query['access_token']});
     token.destroy();
     res.redirect('/admin');
+  });
+
+  router.get('/*',function(req,res,next){
+    //res.sendfile(__dirname + '/client/index.html');
+    var ext=(req.url.indexOf('.')!== -1)?req.url.substr(req.url.lastIndexOf('.')+1):null;
+    if(!req.xhr&& !ext){
+      res.render('index',{});
+    }else
+      next();
   });
 
   app.use(router);

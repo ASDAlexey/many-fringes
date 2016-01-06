@@ -1,0 +1,10 @@
+{
+    "version":3,
+    "file":"page.js",
+    "sourceRoot":"..\\..\\..\\coffee\\angular\\controllers",
+    "sources":[
+        "page.coffee"
+    ],
+    "names":[],
+    "mappings":"AAAA,MAAA,CAAO,EAAP,EAAW,SAAA,GAAA;SACT;IACE,QADF,EAEE,OAFF,EAGE,SAAC,MAAD,EAAS,KAAT,GAAA;AACE,MAAA,MAAM,CAAC,cAAP,GAAwB,yBAAxB,CAAA;aACA,MAAM,CAAC,MAAP,CAAA,EAFF;IAAA,CAHF;IADS;AAAA,CAAX,CAAA,CAAA"
+}

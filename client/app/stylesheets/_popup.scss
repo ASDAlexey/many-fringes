@@ -1,0 +1,56 @@
+.header{
+	.button-popup{
+		position:absolute;
+		z-index:1;
+		top:49px;
+		right:20px;
+	}
+}
+.button-popup{
+	@include dibt;
+	//	background:url('../images/main-sprite.png') no-repeat -139px -97px;
+	width:203px;
+	height:37px;
+	text-indent:-9999em;
+	&:hover{
+		background-position:-139px -140px;
+	}
+}
+.bg-popup{
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index:2999;
+	top:0;
+	left:0;
+	background-color:rgba(#009ee3, .7);
+}
+.popup-block{
+	position:fixed;
+	z-index:3000;
+	left:50%;
+	top:50%;
+	@include translate(-50%, -50%);
+	.close{
+		cursor:pointer;
+		opacity:1;
+		position:absolute;
+		z-index:1001;
+		top:-59px;
+		right:-56px;
+		background-repeat:no-repeat;
+		user-select:none;
+		//		@include draw($mainSprite, close-popup);
+	}
+	.form{
+		width:300px;
+		@include aa();
+		@include translate(-50%, -45%);
+		.form-validate .wrapper-send .send{
+			//			@include draw($mainSprite, popup-send);
+			&:hover{
+				//				@include draw($mainSprite, popup-send-hover);
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+.wrapper-form div{
+	input.ng-pristine.ng-invalid, textarea.ng-pristine.ng-invalid{
+		border:1px solid #c6c6c6;
+	}
+	input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid{
+		border:1px solid #f00;
+	}
+	input.ng-valid, textarea.ng-valid{
+		border:1px solid #c6c6c6 !important;
+	}
+}

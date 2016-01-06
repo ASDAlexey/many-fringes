@@ -1,0 +1,123 @@
+.cube{
+	position:relative;
+	display:block;
+	width:900px;
+	height:400px;
+	perspective:800;
+	transform:translateZ(-200px);
+	transition:transform 1s;
+	transform-style:preserve-3d;
+	img:nth-child(1){
+		transform:rotateX(0deg) translateZ(200px);
+	}
+
+	img:nth-child(2){
+		transform:rotateX(180deg) translateZ(200px);
+	}
+
+	img:nth-child(3){
+		transform:rotateX(90deg) translateZ(200px);
+	}
+
+	img:nth-child(4){
+		transform:rotateX(-90deg) translateZ(200px);
+	}
+
+	img:nth-child(5){
+		transform:rotateY(-90deg) translateZ(200px);
+	}
+
+	img:nth-child(6){
+		transform:rotateY(90deg) translateZ(700px);
+	}
+}
+.cube img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+$size:80px;
+.wrapper-cube{
+	@include dibt();
+	perspective:500px;
+	perspective-origin:center -$size/2;
+}
+.cont{
+	margin:0 auto;
+	width:$size;
+	height:$size;
+	transform-style:preserve-3d;
+	&:before, &:after{
+		content:"";
+		display:block;
+		position:absolute;
+		width:$size;
+		height:$size;
+	}
+	&:before{
+		rotateX:90deg;
+	}
+	&:after{
+		rotateY:90deg;
+	}
+}
+.side{
+	border:1px solid #ccc;
+	position:absolute;
+	width:inherit;
+	height:inherit;
+	background-repeat:no-repeat;
+	background-position:center top;
+	background-size:cover;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	&.back{
+//		translateZ:-$size/2;
+		//		background-image:url(../images/cube/1.jpg);
+		background-color:#ff5a00;
+		color:#fff;
+		@include br(16px);
+		text-align:center;
+		> span{
+			overflow:hidden;
+			max-height:100%;
+			width:100%;
+			@include aa(1);
+		}
+	}
+	&.left{
+		background-color:#ff5a00;
+		color:#fff;
+		@include br(16px);
+		text-align:center;
+		-webkit-transform:translateX(-$size/2) rotateY(-90deg);
+		-moz-transform:translateX(-$size/2) rotateY(-90deg);
+		-ms-transform:translateX(-$size/2) rotateY(-90deg);
+		-o-transform:translateX(-$size/2) rotateY(-90deg);
+		transform:translateX(-$size/2) rotateY(-90deg);
+		//		background-image:url(../images/cube/2.jpg);
+		> span{
+			overflow:hidden;
+			max-height:100%;
+			width:100%;
+			@include aa(1);
+		}
+	}
+	&.right{
+		transform:translateX($size/2) rotateY(90deg);
+		//		background-image:url(../images/cube/3.jpg);
+	}
+	&.top{
+		transform:translateY(-$size/2) rotateX(90deg);
+		//		background-image:url(../images/cube/4.jpg);
+	}
+	&.bottom{
+		transform:translateY($size/2) rotateX(90deg);;
+		//		background-image:url(../images/cube/5.jpg);
+	}
+	&.front{
+		transform:translateZ($size/2);
+	}
+}

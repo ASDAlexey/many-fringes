@@ -1,0 +1,49 @@
+<div class="wrapper-rotation-drag-menu">
+	<div ng-controller="DragMenuCtrl" class="drag-menu-cont">
+		<div class="rotation-drag-menu" id="rotation-drag-menu">
+			<svg version="1.1" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="350px" height="350px" ng-viewBox="0 0 350px 350px" xml:space="preserve"></svg>
+			<nav class="nav-links">
+				<ul class="list-nav-links">
+					<ul class="list-nav-links">
+						<li>
+						<a ui-sref="app.lineCategory({lineCategory:'horoscopes'})" >Гороскопы</a>
+					</li><li>
+						<a ng-href="divination">Гадания</a>
+					</li><li>
+						<a ng-href="our_dreams">Наши сны</a>
+					</li><li>
+						<a ng-href="test_yourself">Протести- руй себя</a>
+					</li><li>
+						<a ng-href="beauty_and_health">Красота и здоровье</a>
+					</li><li>
+						<a ng-href="delicious">Вкусности</a>
+					</li><li>
+						<a ng-href="what_is_it_in_my_name">Имена</a>
+					</li>
+					</ul>
+				</ul>
+			</nav>
+		</div>
+		<a href="" ng-click="showHideRDM()" class="show-hide-rdm">
+			<div class="pulsar">
+				<div class="ring"></div>
+				<div class="ring"></div>
+				<div class="ring"></div>
+				<div class="ring"></div>
+			</div>
+			<span>
+				<section class="si-icons si-icons-default">
+					<span class="si-icon si-icon-maximize-rotate" data-icon-name="maximizeRotate"></span>
+				</section>
+			</span>
+		</a>
+		<ul class="controls-rotation-drag-menu">
+			<li class="left control">
+				<a href="" ng-click="rotateMenu('left',1)"></a>
+			</li>
+			<li class="right control">
+				<a href="" ng-click="rotateMenu('right',1)"></a>
+			</li>
+		</ul>
+	</div>
+</div>

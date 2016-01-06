@@ -1,0 +1,54 @@
+<div>
+	<div class="bg-popup popup-bl" ng-if="isPopupActive" ng-click="triggerPopupShow()"></div>
+	<div class="popup-block popup-bl" ng-if="isPopupActive">
+		<div class="request-block">
+			<div class="form" ng-controller="formValidation">
+				<article class="wrapper-form">
+					<h3 class="title title-aside">Оставьте заявку</h3>
+
+					<p class="description top-descr">
+						<span>на подбор септика</span>
+						<span>для Вашего загородного дома</span>
+					</p>
+
+					<form class="form-validate"
+						  name="formValidate"
+						  id="formSend"
+						  is-valide-border="{{formValidate.$invalid}}"
+						  novalidate>
+						<div class="wrapper-input">
+							<input type="text"
+								   name="name"
+								   placeholder="Ваше имя"
+								   ng-model="dataForm.name"
+								   required
+									>
+						</div>
+						<div class="wrapper-input">
+							<input type="text"
+								   name="phone"
+								   ng-model="dataForm.phone"
+								   placeholder="Ваш телефон"
+								   ng-pattern="/(.*\d.*){5}/"
+								   required
+								   only-int-numbers-plus
+									>
+						</div>
+						<div class="wrapper-input">
+							<input type="text"
+								   name="email"
+								   placeholder="Ваш email"
+								   ng-model="dataForm.email"
+								   required
+									>
+						</div>
+						<div class="wrapper-send">
+							<button class="send" ng-click="send(dataForm,formValidate,mes,'popup',product)">Заказать</button>
+						</div>
+						<div class="close" ng-click="triggerPopupShow()"></div>
+					</form>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>

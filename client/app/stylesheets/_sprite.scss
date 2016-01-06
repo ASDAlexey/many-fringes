@@ -1,0 +1,312 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$buy-name: 'buy';
+$buy-x: 206px;
+$buy-y: 156px;
+$buy-offset-x: -206px;
+$buy-offset-y: -156px;
+$buy-width: 32px;
+$buy-height: 32px;
+$buy-total-width: 328px;
+$buy-total-height: 235px;
+$buy-image: '../images/sprite.png';
+$buy: (206px, 156px, -206px, -156px, 32px, 32px, 328px, 235px, '../images/sprite.png', 'buy', );
+$close-popup-name: 'close-popup';
+$close-popup-x: 314px;
+$close-popup-y: 172px;
+$close-popup-offset-x: -314px;
+$close-popup-offset-y: -172px;
+$close-popup-width: 11px;
+$close-popup-height: 11px;
+$close-popup-total-width: 328px;
+$close-popup-total-height: 235px;
+$close-popup-image: '../images/sprite.png';
+$close-popup: (314px, 172px, -314px, -172px, 11px, 11px, 328px, 235px, '../images/sprite.png', 'close-popup', );
+$close-name: 'close';
+$close-x: 75px;
+$close-y: 208px;
+$close-offset-x: -75px;
+$close-offset-y: -208px;
+$close-width: 15px;
+$close-height: 15px;
+$close-total-width: 328px;
+$close-total-height: 235px;
+$close-image: '../images/sprite.png';
+$close: (75px, 208px, -75px, -208px, 15px, 15px, 328px, 235px, '../images/sprite.png', 'close', );
+$en-name: 'en';
+$en-x: 172px;
+$en-y: 122px;
+$en-offset-x: -172px;
+$en-offset-y: -122px;
+$en-width: 32px;
+$en-height: 32px;
+$en-total-width: 328px;
+$en-total-height: 235px;
+$en-image: '../images/sprite.png';
+$en: (172px, 122px, -172px, -122px, 32px, 32px, 328px, 235px, '../images/sprite.png', 'en', );
+$eur-name: 'eur';
+$eur-x: 18px;
+$eur-y: 208px;
+$eur-offset-x: -18px;
+$eur-offset-y: -208px;
+$eur-width: 18px;
+$eur-height: 21px;
+$eur-total-width: 328px;
+$eur-total-height: 235px;
+$eur-image: '../images/sprite.png';
+$eur: (18px, 208px, -18px, -208px, 18px, 21px, 328px, 235px, '../images/sprite.png', 'eur', );
+$exchange-name: 'exchange';
+$exchange-x: 172px;
+$exchange-y: 156px;
+$exchange-offset-x: -172px;
+$exchange-offset-y: -156px;
+$exchange-width: 32px;
+$exchange-height: 32px;
+$exchange-total-width: 328px;
+$exchange-total-height: 235px;
+$exchange-image: '../images/sprite.png';
+$exchange: (172px, 156px, -172px, -156px, 32px, 32px, 328px, 235px, '../images/sprite.png', 'exchange', );
+$icon-mail-name: 'icon-mail';
+$icon-mail-x: 208px;
+$icon-mail-y: 190px;
+$icon-mail-offset-x: -208px;
+$icon-mail-offset-y: -190px;
+$icon-mail-width: 16px;
+$icon-mail-height: 16px;
+$icon-mail-total-width: 328px;
+$icon-mail-total-height: 235px;
+$icon-mail-image: '../images/sprite.png';
+$icon-mail: (208px, 190px, -208px, -190px, 16px, 16px, 328px, 235px, '../images/sprite.png', 'icon-mail', );
+$left-name: 'left';
+$left-x: 122px;
+$left-y: 0px;
+$left-offset-x: -122px;
+$left-offset-y: 0px;
+$left-width: 120px;
+$left-height: 120px;
+$left-total-width: 328px;
+$left-total-height: 235px;
+$left-image: '../images/sprite.png';
+$left: (122px, 0px, -122px, 0px, 120px, 120px, 328px, 235px, '../images/sprite.png', 'left', );
+$logout-name: 'logout';
+$logout-x: 226px;
+$logout-y: 190px;
+$logout-offset-x: -226px;
+$logout-offset-y: -190px;
+$logout-width: 16px;
+$logout-height: 15px;
+$logout-total-width: 328px;
+$logout-total-height: 235px;
+$logout-image: '../images/sprite.png';
+$logout: (226px, 190px, -226px, -190px, 16px, 15px, 328px, 235px, '../images/sprite.png', 'logout', );
+$mail-icon-name: 'mail-icon';
+$mail-icon-x: 172px;
+$mail-icon-y: 190px;
+$mail-icon-offset-x: -172px;
+$mail-icon-offset-y: -190px;
+$mail-icon-width: 16px;
+$mail-icon-height: 16px;
+$mail-icon-total-width: 328px;
+$mail-icon-total-height: 235px;
+$mail-icon-image: '../images/sprite.png';
+$mail-icon: (172px, 190px, -172px, -190px, 16px, 16px, 328px, 235px, '../images/sprite.png', 'mail-icon', );
+$next-hover-name: 'next-hover';
+$next-hover-x: 244px;
+$next-hover-y: 0px;
+$next-hover-offset-x: -244px;
+$next-hover-offset-y: 0px;
+$next-hover-width: 84px;
+$next-hover-height: 84px;
+$next-hover-total-width: 328px;
+$next-hover-total-height: 235px;
+$next-hover-image: '../images/sprite.png';
+$next-hover: (244px, 0px, -244px, 0px, 84px, 84px, 328px, 235px, '../images/sprite.png', 'next-hover', );
+$next-name: 'next';
+$next-x: 0px;
+$next-y: 122px;
+$next-offset-x: 0px;
+$next-offset-y: -122px;
+$next-width: 84px;
+$next-height: 84px;
+$next-total-width: 328px;
+$next-total-height: 235px;
+$next-image: '../images/sprite.png';
+$next: (0px, 122px, 0px, -122px, 84px, 84px, 328px, 235px, '../images/sprite.png', 'next', );
+$prev-hover-name: 'prev-hover';
+$prev-hover-x: 244px;
+$prev-hover-y: 86px;
+$prev-hover-offset-x: -244px;
+$prev-hover-offset-y: -86px;
+$prev-hover-width: 84px;
+$prev-hover-height: 84px;
+$prev-hover-total-width: 328px;
+$prev-hover-total-height: 235px;
+$prev-hover-image: '../images/sprite.png';
+$prev-hover: (244px, 86px, -244px, -86px, 84px, 84px, 328px, 235px, '../images/sprite.png', 'prev-hover', );
+$prev-name: 'prev';
+$prev-x: 86px;
+$prev-y: 122px;
+$prev-offset-x: -86px;
+$prev-offset-y: -122px;
+$prev-width: 84px;
+$prev-height: 84px;
+$prev-total-width: 328px;
+$prev-total-height: 235px;
+$prev-image: '../images/sprite.png';
+$prev: (86px, 122px, -86px, -122px, 84px, 84px, 328px, 235px, '../images/sprite.png', 'prev', );
+$profile-name: 'profile';
+$profile-x: 190px;
+$profile-y: 190px;
+$profile-offset-x: -190px;
+$profile-offset-y: -190px;
+$profile-width: 16px;
+$profile-height: 16px;
+$profile-total-width: 328px;
+$profile-total-height: 235px;
+$profile-image: '../images/sprite.png';
+$profile: (190px, 190px, -190px, -190px, 16px, 16px, 328px, 235px, '../images/sprite.png', 'profile', );
+$rent-name: 'rent';
+$rent-x: 244px;
+$rent-y: 172px;
+$rent-offset-x: -244px;
+$rent-offset-y: -172px;
+$rent-width: 34px;
+$rent-height: 32px;
+$rent-total-width: 328px;
+$rent-total-height: 235px;
+$rent-image: '../images/sprite.png';
+$rent: (244px, 172px, -244px, -172px, 34px, 32px, 328px, 235px, '../images/sprite.png', 'rent', );
+$right-name: 'right';
+$right-x: 0px;
+$right-y: 0px;
+$right-offset-x: 0px;
+$right-offset-y: 0px;
+$right-width: 120px;
+$right-height: 120px;
+$right-total-width: 328px;
+$right-total-height: 235px;
+$right-image: '../images/sprite.png';
+$right: (0px, 0px, 0px, 0px, 120px, 120px, 328px, 235px, '../images/sprite.png', 'right', );
+$ru-name: 'ru';
+$ru-x: 206px;
+$ru-y: 122px;
+$ru-offset-x: -206px;
+$ru-offset-y: -122px;
+$ru-width: 32px;
+$ru-height: 32px;
+$ru-total-width: 328px;
+$ru-total-height: 235px;
+$ru-image: '../images/sprite.png';
+$ru: (206px, 122px, -206px, -122px, 32px, 32px, 328px, 235px, '../images/sprite.png', 'ru', );
+$rub-name: 'rub';
+$rub-x: 38px;
+$rub-y: 208px;
+$rub-offset-x: -38px;
+$rub-offset-y: -208px;
+$rub-width: 17px;
+$rub-height: 21px;
+$rub-total-width: 328px;
+$rub-total-height: 235px;
+$rub-image: '../images/sprite.png';
+$rub: (38px, 208px, -38px, -208px, 17px, 21px, 328px, 235px, '../images/sprite.png', 'rub', );
+$sell-name: 'sell';
+$sell-x: 280px;
+$sell-y: 172px;
+$sell-offset-x: -280px;
+$sell-offset-y: -172px;
+$sell-width: 32px;
+$sell-height: 32px;
+$sell-total-width: 328px;
+$sell-total-height: 235px;
+$sell-image: '../images/sprite.png';
+$sell: (280px, 172px, -280px, -172px, 32px, 32px, 328px, 235px, '../images/sprite.png', 'sell', );
+$settings-name: 'settings';
+$settings-x: 57px;
+$settings-y: 208px;
+$settings-offset-x: -57px;
+$settings-offset-y: -208px;
+$settings-width: 16px;
+$settings-height: 17px;
+$settings-total-width: 328px;
+$settings-total-height: 235px;
+$settings-image: '../images/sprite.png';
+$settings: (57px, 208px, -57px, -208px, 16px, 17px, 328px, 235px, '../images/sprite.png', 'settings', );
+$usd-name: 'usd';
+$usd-x: 0px;
+$usd-y: 208px;
+$usd-offset-x: 0px;
+$usd-offset-y: -208px;
+$usd-width: 16px;
+$usd-height: 27px;
+$usd-total-width: 328px;
+$usd-total-height: 235px;
+$usd-image: '../images/sprite.png';
+$usd: (0px, 208px, 0px, -208px, 16px, 27px, 328px, 235px, '../images/sprite.png', 'usd', );
+$spritesheet-width: 328px;
+$spritesheet-height: 235px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($buy, $close-popup, $close, $en, $eur, $exchange, $icon-mail, $left, $logout, $mail-icon, $next-hover, $next, $prev-hover, $prev, $profile, $rent, $right, $ru, $rub, $sell, $settings, $usd, );
+$spritesheet: (328px, 235px, '../images/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

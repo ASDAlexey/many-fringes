@@ -1,0 +1,57 @@
+.request-block{
+	width:432px;
+	height:412px;
+	//	background-image:url(../images/bg/bg-popup.png);
+	background-repeat:no-repeat;
+	background-position:center top;
+}
+.form-validate{
+	box-sizing:border-box;
+	text-align:center;
+	@include buttonAnim(100px);
+	> div{
+		position:relative;
+		z-index:0;
+		.icon{
+			position:absolute;
+			z-index:1;
+			top:9px;
+			left:6px;
+			@include dibt();
+			font-size:18px;
+			.ua-webkit &{
+				top:10px;
+			}
+			.ua-ie &{
+				top:10px;
+			}
+		}
+		&.wrapper-send{
+			margin:0;
+			.send{
+				border-radius:12px;
+			}
+		}
+		input{
+			background-color:#fff;
+			border-radius:5px;
+			padding:0 7px 0 31px;
+			width:100%;
+			height:37px;
+			@include osr(14px);
+			color:#555;
+			display:block;
+		}
+		span.choise{
+			margin-right:5px;
+			display:inline-block;
+			vertical-align:middle;
+			$choises:$buy, $sell, $exchange, $rent;
+			@each $choisen in $choises{
+				&.#{unquote(nth($choisen, 10))}{
+					@include sprite($choisen);
+				}
+			}
+		}
+	}
+}

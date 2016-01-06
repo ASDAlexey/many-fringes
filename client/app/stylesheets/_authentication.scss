@@ -1,0 +1,29 @@
+.authentication-block{
+	position:fixed;
+	z-index:5;
+	top:0;
+	right:10px;
+	.nav{
+		background-color:#fff;
+		text-align:center;
+		border:1px solid #fff;
+		border-radius:0 0 12px 12px;
+		overflow:hidden;
+		> li{
+			@include dibt();
+			a{
+				text-decoration:none;
+				background-color:#ff5a00;
+				color:#fff;
+				@include dibt();
+				@include oscl(14px);
+				padding:3px 14px;
+				@include transition(.5s);
+				&:hover{
+					background-color:#fff;
+					color:#ff5a00;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+.aside{
+	position:fixed;
+	z-index:1001;
+	left:-317px;
+	top:0;
+	height:100%;
+	@include transition(left,1s);
+	&.open{
+		left:0;
+	}
+	.aside-block{
+		@include fl();
+		height:100%;
+		position:relative;
+		z-index:0;
+		> *{
+			@include aa();
+		}
+		&.content{
+			width:316px;
+			background-color:rgba(240, 241, 233, .9);
+		}
+		&.button{
+			cursor:pointer;
+			width:64px;
+			background-color:rgba(212, 28, 55, .7);
+			@include transition(.8s);
+			&:hover{
+				background-color:rgba(212, 28, 55, .9);
+			}
+			span{
+				@include er(30px);
+				color:#fff;
+				text-transform:uppercase;
+				white-space:nowrap;
+				@include transform(rotate(-90deg) translate(-50%, -50%));
+				@include transform-origin(0, 0, 0);
+			}
+		}
+	}
+}

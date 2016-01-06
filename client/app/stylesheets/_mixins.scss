@@ -1,0 +1,195 @@
+@mixin dibt() {
+	display:inline-block;
+	vertical-align:top;
+}
+@mixin dibm() {
+	display:inline-block;
+	vertical-align:middle;
+}
+@mixin dibb() {
+	display:inline-block;
+	vertical-align:bottom;
+}
+@mixin after() {
+	&:after{
+		content:".";
+		clear:both;
+		display:block;
+		height:0;
+		font-size:0;
+		visibility:hidden;
+	}
+}
+@mixin transition($time:.5s, $property:all) {
+	transition:#{$property} #{$time};
+}
+@mixin transform($property) {
+	transform:$property;
+}
+@mixin translate($x:-50%, $y:-50%, $z:0) {
+	transform:translate3d($x, $y, $z);
+}
+@mixin scale($scale) {
+	transform:scale($scale);
+}
+@mixin rotate($deg) {
+	transform:rotate($deg);
+}
+@mixin flip-h{
+	@include scale(-1, 1);
+}
+@mixin flip-v{
+	@include scale(1, -1);
+}
+@mixin aa($zindex:0) {
+	position:absolute;
+	z-index:$zindex;
+	top:50%;
+	left:50%;
+	@include translate(-50%, -50%);
+}
+@mixin gradient($colors, $direction:top) {
+	background:linear-gradient(to $direction, #{$colors});
+}
+@mixin sprite-hover($sprite, $sprite-hover) {
+	@include sprite($sprite);
+	&:hover{
+		@include sprite($sprite-hover);
+	}
+}
+@mixin send-button($fontSize:30px, $color:#000, $bgc:#fff, $bgch:#fff, $colorh:#fff) {
+	.wrapper-send{
+		text-align:center;
+		.send{
+			border-top:1px solid #c8cec1;
+			cursor:pointer;
+			@include dibt();
+			background-color:$bgc;
+			@include transition();
+			&:hover{
+				background-color:$bgch;
+				> span{
+					color:$colorh;
+				}
+			}
+			> span{
+				@include transition();
+				@include dibt();
+				padding:21px 20px 15px;
+				color:$color;
+				text-decoration:none;
+				text-transform:uppercase;
+				font-weight:bold;
+				background-clip:text;
+			}
+		}
+	}
+}
+@mixin buttonAnim($width:100px, $color1:#fff, $color2:#eb770e) {
+	%extend_1{
+		display:block;
+		text-align:center;
+		height:38px;
+	}
+	.send-button{
+		@include transition();
+		overflow:hidden;
+		padding:0;
+		display:block;
+		position:relative;
+		width:$width;
+		border:1px solid #ccc;
+		border-radius:12px;
+		&:after{
+			@extend %extend_1;
+			content:attr(data-title);
+			background:$color2;
+			color:$color1;
+			width:100%;
+			@include fo(25px);
+			padding-top:10px;
+			overflow:hidden;
+			top:0;
+			left:0;
+		}
+		> span{
+			padding:0 !important;
+			display:block;
+			position:absolute;
+			overflow:hidden;
+			left:0;
+			top:0;
+			height:100%;
+			width:0;
+			@include transition();
+			> span{
+				@extend %extend_1;
+				width:$width;
+				background:$color1;
+				color:$color2;
+				@include fo(25px);
+				padding-top:9px;
+			}
+		}
+		&:hover{
+			> span{
+				width:100%;
+			}
+		}
+	}
+}
+@mixin aa($zindex:0) {
+	position:absolute;
+	z-index:$zindex;
+	top:50%;
+	left:50%;
+	@include translate(-50%, -50%);
+}
+@mixin br($size:14px, $lh:1, $fw:400) {
+	font-family:'bebas_neue_regularregular', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin ar($size:14px, $lh:1, $fw:400) {
+	font-family:'alexandra_scriptregular', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin bl($size:14px, $lh:1, $fw:400) {
+	font-family:'bebas_neuelight', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin bbook($size:14px, $lh:1, $fw:400) {
+	font-family:'bebas_neuebook', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin bb($size:14px, $lh:1, $fw:400) {
+	font-family:'bebas_neuebold', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin fo($size:14px, $lh:1, $fw:400) {
+	font-family:'foo', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin oscl($size:14px, $lh:1, $fw:400) {
+	font-family:'OpenSansCondensedLight', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
+@mixin osr($size:14px, $lh:1, $fw:400) {
+	font-family:'OpenSansRegular', Tahoma, sans-serif;
+	line-height:$lh;
+	font-weight:$fw;
+	font-size:$size;
+}
