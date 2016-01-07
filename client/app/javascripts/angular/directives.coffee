@@ -317,7 +317,7 @@ define [
   #          easingOut : "none"
   #        )
   #  ]
-  directives.a = [
+  ###directives.a = [
     "$timeout"
     "$location"
     "$rootScope"
@@ -336,7 +336,7 @@ define [
             $timeout (->
               $location.path(href)
             ),1200
-  ]
+  ]###
   directives.preloader = [
     "$rootScope"
     "$timeout"
@@ -451,30 +451,29 @@ define [
       templateUrl : "app/templates/cube.html"
       link : (scope,element)->
         scope.config = config
-        $rootScope.$on 'isDomRender',(event,data)->
-          if (cssua.ua and cssua.ua.ie <= 11.0)
-            CSSPlugin.defaultTransformPerspective = 1000
-            TweenMax.set($(element).find('.cont .back'),{
-              rotationY : -180
-            })
-            tl = new TimelineMax({paused : true});
-            tl
-            .to($(element).find('.cont .front'),1,{rotationY : 180})
-            .to($(element).find('.cont .back'),1,{rotationY : 0},0)
-            angular.element(element).on "mouseenter touch",->
-              tl.play()
-            angular.element(element).on "mouseleave touch",->
-              tl.reverse()
-          else
-            TweenMax.to $(element).find('.cont'),0,
-              rotationY : "17"
-            hoverEffect = TweenMax.to $(element).find('.cont'),0.5,
-              rotationY : "90"
-            hoverEffect.pause()
-            angular.element(element).on "mouseenter touch",->
-              hoverEffect.play()
-            angular.element(element).on "mouseleave touch",->
-              hoverEffect.reverse()
+        if (cssua.ua and cssua.ua.ie <= 11.0)
+          CSSPlugin.defaultTransformPerspective = 1000
+          TweenMax.set($(element).find('.cont .back'),{
+            rotationY : -180
+          })
+          tl = new TimelineMax({paused : true});
+          tl
+          .to($(element).find('.cont .front'),1,{rotationY : 180})
+          .to($(element).find('.cont .back'),1,{rotationY : 0},0)
+          angular.element(element).on "mouseenter touch",->
+            tl.play()
+          angular.element(element).on "mouseleave touch",->
+            tl.reverse()
+        else
+          TweenMax.to $(element).find('.cont'),0,
+            rotationY : "17"
+          hoverEffect = TweenMax.to $(element).find('.cont'),0.5,
+            rotationY : "90"
+          hoverEffect.pause()
+          angular.element(element).on "mouseenter touch",->
+            hoverEffect.play()
+          angular.element(element).on "mouseleave touch",->
+            hoverEffect.reverse()
   ]
   directives.scrollUp = [
     "$timeout"
@@ -633,8 +632,16 @@ define [
                 x : x
                 y : y
               )
+              $rootScope.$on '$locationChangeSuccess', (event) ->
+                scope.absUrl = $location.absUrl()
+                console.log('url')
+                console.log(scope.absUrl)
+                scope.$apply()
+                path.attr(
+                  "fill","url(#{scope.absUrl}##{pattern.node.id})"
+                )
               path.attr(
-                "fill","url(#{$location.absUrl()}##{pattern.node.id})"
+                "fill","url(#{scope.absUrl}##{pattern.node.id})"
               )
             pathAnimateStart : (path,index)->
               path.animate {'stroke-dashoffset' : 0.1,fill : @attrHover[index].fill,stroke : @attrHover[index]['stroke'],"fill-opacity" : @attrHover[index]['fill-opacity'],'path' : @el[index](@property[index])},@time[index],mina.none
@@ -1081,7 +1088,7 @@ define [
         url : "@"
       }
       replace : true
-      templateUrl : "templates/popularslider-tmpl.html"
+      templateUrl : "app/templates/popularslider-tmpl.html"
       link : (scope,element,attr) ->
         slider = ''
         svgLeft = """

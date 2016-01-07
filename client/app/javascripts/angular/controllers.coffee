@@ -192,40 +192,36 @@ define [
       $scope.fullPathCategoryImages = _.each($scope.categoryImages,(value)->
         value.src = 'app/images/categories_images/' + value.src
       )
-      Articles.findAll('linecategories').then (data) ->
-        $scope.categories = data
+#      Articles.findAll('linecategories').then (data) ->
+#        $scope.categories = data
   ]
   controllers.lineCategoryCtrl = [
     "$scope"
     "$location"
     "config"
     "$rootScope"
-    "$routeParams"
+    "$stateParams"
     "Article"
-    ($scope,$location,config,$rootScope,$routeParams,Article) ->
+    ($scope,$location,config,$rootScope,$stateParams,Article) ->
       $scope.absUrl = $location.absUrl()
-      $scope.params = $routeParams;
-      Article.findOne($scope.params.lineCategory,'linecategories').then (data) ->
-        $scope.categories = data
-        console.log($scope.categories)
+      $scope.params = $stateParams;
+      console.log($scope.absUrl)
+#      Article.findOne($scope.params.lineCategory,'linecategories').then (data) ->
+#        $scope.categories = data
+#        console.log($scope.categories)
   ]
   controllers.categoryCtrl = [
     "$scope"
     "$location"
     "config"
     "$rootScope"
-    "$routeParams"
+    "$stateParams"
     "Article"
-    ($scope,$location,config,$rootScope,$routeParams,Articles) ->
+    ($scope,$location,config,$rootScope,$stateParams,Articles) ->
       $scope.absUrl = $location.absUrl()
-      $scope.params = $routeParams;
-      #      console.log('categoryCtrl')
-      Articles.findAll("linecategories/#{$scope.params.lineCategory}/categories").then (data) ->
-#        console.log($scope.params.category)
-#        console.log(data)
-        $scope.category = _.findWhere(data,{slug : $scope.params.category})
-#        console.log($scope.category)
-#        console.log($scope.params.category)
+      $scope.params = $stateParams;
+#      Articles.findAll("linecategories/#{$scope.params.lineCategory}/categories").then (data) ->
+#        $scope.category = _.findWhere(data,{slug : $scope.params.category})
   ]
   controllers.articleCtrl = [
     "$scope"

@@ -31,15 +31,25 @@ define [
     '$urlRouterProvider',
     'config'
     ($stateProvider,$locationProvider,$urlRouterProvider,config)->
-      $stateProvider.state('app',{
-        url : "",
+      $stateProvider.state('home',{
+        url : "/",
         templateUrl : config.frontendTemplatesPath + "/index.html",
         controller : "indexCtrl"
       })
-      .state('app.lineCategory',{
+      .state('lineCategory',{
         url : "/:lineCategory",
         templateUrl : "#{config.frontendTemplatesPath}/category/list-category.html"
         controller : "lineCategoryCtrl"
+      })
+      .state('category',{
+        url : "/:lineCategory/:category",
+        templateUrl : "#{config.frontendTemplatesPath}/category/category.html"
+        controller : "categoryCtrl"
+      })
+      .state('article',{
+        url : "/:lineCategory/:category/:article",
+        templateUrl : "#{config.frontendTemplatesPath}/category/article.html"
+        controller : "articleCtrl"
       });
       $locationProvider.html5Mode({
         enabled : true,

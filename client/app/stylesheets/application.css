@@ -345,7 +345,8 @@ td, th {
 .grayscale.grayscale-fade {
   -webkit-transition: -webkit-filter .5s; }
 
-.grayscale.grayscale-off, .grayscale.grayscale-fade:hover {
+.grayscale.grayscale-off,
+.grayscale.grayscale-fade:hover {
   -webkit-filter: grayscale(0%);
   filter: none; }
 
@@ -358,127 +359,128 @@ td, th {
   -webkit-transition: opacity .5s ease;
   transition: opacity .5s ease; }
 
-.grayscale.grayscale-replaced.grayscale-off > svg, .grayscale.grayscale-replaced.grayscale-fade:hover > svg {
+.grayscale.grayscale-replaced.grayscale-off > svg,
+.grayscale.grayscale-replaced.grayscale-fade:hover > svg {
   opacity: 0; }
 
 @font-face {
   font-family: 'alexandra_scriptregular';
-  src: url('../fonts/alexandra_script-webfont.eot');
-  src: url('../fonts/alexandra_script-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/alexandra_script-webfont.woff2') format('woff2'), url('../fonts/alexandra_script-webfont.woff') format('woff'), url('../fonts/alexandra_script-webfont.ttf') format('truetype'), url('../fonts/alexandra_script-webfont.svg#alexandra_scriptregular') format('svg');
+  src: url("../fonts/alexandra_script-webfont.eot");
+  src: url("../fonts/alexandra_script-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/alexandra_script-webfont.woff2") format("woff2"), url("../fonts/alexandra_script-webfont.woff") format("woff"), url("../fonts/alexandra_script-webfont.ttf") format("truetype"), url("../fonts/alexandra_script-webfont.svg#alexandra_scriptregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neuebold';
-  src: url('../fonts/bebasneue_bold.eot');
-  src: url('../fonts/bebasneue_bold.eot?#iefix') format('embedded-opentype'), url('../fonts/bebasneue_bold.woff') format('woff'), url('../fonts/bebasneue_bold.ttf') format('truetype');
+  src: url("../fonts/bebasneue_bold.eot");
+  src: url("../fonts/bebasneue_bold.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_bold.woff") format("woff"), url("../fonts/bebasneue_bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neuebook';
-  src: url('../fonts/bebasneue_book.eot');
-  src: url('../fonts/bebasneue_book.eot?#iefix') format('embedded-opentype'), url('../fonts/bebasneue_book.woff') format('woff'), url('../fonts/bebasneue_book.ttf') format('truetype');
+  src: url("../fonts/bebasneue_book.eot");
+  src: url("../fonts/bebasneue_book.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_book.woff") format("woff"), url("../fonts/bebasneue_book.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neuelight';
-  src: url('../fonts/bebasneue_light.eot');
-  src: url('../fonts/bebasneue_light.eot?#iefix') format('embedded-opentype'), url('../fonts/bebasneue_light.woff') format('woff'), url('../fonts/bebasneue_light.ttf') format('truetype');
+  src: url("../fonts/bebasneue_light.eot");
+  src: url("../fonts/bebasneue_light.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_light.woff") format("woff"), url("../fonts/bebasneue_light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neue_regularregular';
-  src: url('../fonts/bebasneue_regular.eot');
-  src: url('../fonts/bebasneue_regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bebasneue_regular.woff') format('woff'), url('../fonts/bebasneue_regular.ttf') format('truetype');
+  src: url("../fonts/bebasneue_regular.eot");
+  src: url("../fonts/bebasneue_regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_regular.woff") format("woff"), url("../fonts/bebasneue_regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'bebas_neuethin';
-  src: url('../fonts/bebasneue_thin.eot');
-  src: url('../fonts/bebasneue_thin.eot?#iefix') format('embedded-opentype'), url('../fonts/bebasneue_thin.woff') format('woff'), url('../fonts/bebasneue_thin.ttf') format('truetype');
+  src: url("../fonts/bebasneue_thin.eot");
+  src: url("../fonts/bebasneue_thin.eot?#iefix") format("embedded-opentype"), url("../fonts/bebasneue_thin.woff") format("woff"), url("../fonts/bebasneue_thin.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'foo';
-  src: url('../fonts/foo.eot');
-  src: url('../fonts/foo.eot?#iefix') format('embedded-opentype'), url('../fonts/foo.woff') format('woff'), url('../fonts/foo.ttf') format('truetype');
+  src: url("../fonts/foo.eot");
+  src: url("../fonts/foo.eot?#iefix") format("embedded-opentype"), url("../fonts/foo.woff") format("woff"), url("../fonts/foo.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSansBold';
-  src: url('../fonts/opensans-bold.eot');
-  src: url('../fonts/opensans-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-bold.woff') format('woff'), url('../fonts/opensans-bold.ttf') format('truetype');
+  src: url("../fonts/opensans-bold.eot");
+  src: url("../fonts/opensans-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-bold.woff") format("woff"), url("../fonts/opensans-bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSansBoldItalic';
-  src: url('../fonts/opensans-bolditalic.eot');
-  src: url('../fonts/opensans-bolditalic.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-bolditalic.woff') format('woff'), url('../fonts/opensans-bolditalic.ttf') format('truetype');
+  src: url("../fonts/opensans-bolditalic.eot");
+  src: url("../fonts/opensans-bolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-bolditalic.woff") format("woff"), url("../fonts/opensans-bolditalic.ttf") format("truetype");
   font-weight: bold; }
 
 @font-face {
   font-family: 'OpenSansExtraboldRegular';
-  src: url('../fonts/opensans-extrabold.eot');
-  src: url('../fonts/opensans-extrabold.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-extrabold.woff') format('woff'), url('../fonts/opensans-extrabold.ttf') format('truetype');
+  src: url("../fonts/opensans-extrabold.eot");
+  src: url("../fonts/opensans-extrabold.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-extrabold.woff") format("woff"), url("../fonts/opensans-extrabold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSansExtraboldItalic';
-  src: url('../fonts/opensans-extrabolditalic.eot');
-  src: url('../fonts/opensans-extrabolditalic.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-extrabolditalic.woff') format('woff'), url('../fonts/opensans-extrabolditalic.ttf') format('truetype');
+  src: url("../fonts/opensans-extrabolditalic.eot");
+  src: url("../fonts/opensans-extrabolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-extrabolditalic.woff") format("woff"), url("../fonts/opensans-extrabolditalic.ttf") format("truetype");
   font-weight: normal; }
 
 @font-face {
   font-family: 'OpenSansItalic';
-  src: url('../fonts/opensans-italic.eot');
-  src: url('../fonts/opensans-italic.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-italic.woff') format('woff'), url('../fonts/opensans-italic.ttf') format('truetype');
+  src: url("../fonts/opensans-italic.eot");
+  src: url("../fonts/opensans-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-italic.woff") format("woff"), url("../fonts/opensans-italic.ttf") format("truetype");
   font-weight: normal; }
 
 @font-face {
   font-family: 'OpenSansLightRegular';
-  src: url('../fonts/opensans-light.eot');
-  src: url('../fonts/opensans-light.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-light.woff') format('woff'), url('../fonts/opensans-light.ttf') format('truetype');
+  src: url("../fonts/opensans-light.eot");
+  src: url("../fonts/opensans-light.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-light.woff") format("woff"), url("../fonts/opensans-light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSansLightItalic';
-  src: url('../fonts/opensans-lightitalic.eot');
-  src: url('../fonts/opensans-lightitalic.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-lightitalic.woff') format('woff'), url('../fonts/opensans-lightitalic.ttf') format('truetype');
+  src: url("../fonts/opensans-lightitalic.eot");
+  src: url("../fonts/opensans-lightitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-lightitalic.woff") format("woff"), url("../fonts/opensans-lightitalic.ttf") format("truetype");
   font-weight: normal; }
 
 @font-face {
   font-family: 'OpenSansRegular';
-  src: url('../fonts/opensans-regular.eot');
-  src: url('../fonts/opensans-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-regular.woff') format('woff'), url('../fonts/opensans-regular.ttf') format('truetype');
+  src: url("../fonts/opensans-regular.eot");
+  src: url("../fonts/opensans-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-regular.woff") format("woff"), url("../fonts/opensans-regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSansSemiboldRegular';
-  src: url('../fonts/opensans-semibold.eot');
-  src: url('../fonts/opensans-semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-semibold.woff') format('woff'), url('../fonts/opensans-semibold.ttf') format('truetype');
+  src: url("../fonts/opensans-semibold.eot");
+  src: url("../fonts/opensans-semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-semibold.woff") format("woff"), url("../fonts/opensans-semibold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSansSemiboldItalic';
-  src: url('../fonts/opensans-semibolditalic.eot');
-  src: url('../fonts/opensans-semibolditalic.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans-semibolditalic.woff') format('woff'), url('../fonts/opensans-semibolditalic.ttf') format('truetype');
+  src: url("../fonts/opensans-semibolditalic.eot");
+  src: url("../fonts/opensans-semibolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans-semibolditalic.woff") format("woff"), url("../fonts/opensans-semibolditalic.ttf") format("truetype");
   font-weight: normal; }
 
 @font-face {
   font-family: 'OpenSansCondensedLight';
-  src: url('../fonts/open_sans_condensed_light.eot');
-  src: url('../fonts/open_sans_condensed_light.eot?#iefix') format('embedded-opentype'), url('../fonts/open_sans_condensed_light.woff') format('woff'), url('../fonts/open_sans_condensed_light.ttf') format('truetype'), url('../fonts/open_sans_condensed_light.svg#OpenSansCondensedLight') format('svg');
+  src: url("../fonts/open_sans_condensed_light.eot");
+  src: url("../fonts/open_sans_condensed_light.eot?#iefix") format("embedded-opentype"), url("../fonts/open_sans_condensed_light.woff") format("woff"), url("../fonts/open_sans_condensed_light.ttf") format("truetype"), url("../fonts/open_sans_condensed_light.svg#OpenSansCondensedLight") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -621,6 +623,34 @@ body {
     opacity: 0;
     cursor: pointer; }
 
+::-webkit-scrollbar {
+  width: 6px; }
+
+::-webkit-scrollbar-track {
+  background-color: #fff;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s; }
+
+::-webkit-scrollbar-track:hover {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); }
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff5a00;
+  border-radius: 10px;
+  transition: all 0.5s; }
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff5a00; }
+
+body {
+  scrollbar-base-color: #ff5a00;
+  scrollbar-3dlight-color: #ff5a00;
+  scrollbar-highlight-color: #ff5a00;
+  scrollbar-track-color: #fff;
+  scrollbar-arrow-color: #ff5a00;
+  scrollbar-shadow-color: #ff5a00;
+  scrollbar-dark-shadow-color: #ff5a00; }
+
 .preloader {
   position: fixed;
   left: 0;
@@ -657,17 +687,19 @@ body {
 
 .wrapper-form div input.ng-pristine.ng-invalid, .wrapper-form div textarea.ng-pristine.ng-invalid {
   border: 1px solid #c6c6c6; }
+
 .wrapper-form div input.ng-dirty.ng-invalid, .wrapper-form div textarea.ng-dirty.ng-invalid {
   border: 1px solid #f00; }
+
 .wrapper-form div input.ng-valid, .wrapper-form div textarea.ng-valid {
   border: 1px solid #c6c6c6 !important; }
 
 /*animate*/
 .popover-showed, .popup-bl, .directive-thank, .block-showed, .da-thumbs, .portfolio-more {
-  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s;
-  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s;
-  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s;
-  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) .5s; }
+  -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -moz-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  -o-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s; }
   .popover-showed.ng-enter, .popup-bl.ng-enter, .directive-thank.ng-enter, .block-showed.ng-enter, .da-thumbs.ng-enter, .portfolio-more.ng-enter {
     opacity: 0; }
   .popover-showed.ng-enter-active, .popup-bl.ng-enter-active, .directive-thank.ng-enter-active, .block-showed.ng-enter-active, .da-thumbs.ng-enter-active, .portfolio-more.ng-enter-active {
@@ -830,7 +862,8 @@ body {
   -o-transform: translatez(0);
   transform: translatez(0); }
 
-.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
   position: absolute;
   bottom: -30px;
   width: 100%; }
@@ -855,7 +888,8 @@ body {
   color: #666;
   padding-top: 20px; }
 
-.bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
   display: inline-block;
   *zoom: 1;
   *display: inline; }
@@ -872,7 +906,8 @@ body {
   -webkit-border-radius: 5px;
   border-radius: 5px; }
 
-.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
   background: #000; }
 
 /* DIRECTION CONTROLS (NEXT / PREV) */
@@ -929,7 +964,8 @@ body {
   outline: 0;
   margin: 0 3px; }
 
-.bx-wrapper .bx-controls-auto .bx-start:hover, .bx-wrapper .bx-controls-auto .bx-start.active {
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
   background-position: -86px 0; }
 
 .bx-wrapper .bx-controls-auto .bx-stop {
@@ -940,7 +976,8 @@ body {
   outline: 0;
   margin: 0 3px; }
 
-.bx-wrapper .bx-controls-auto .bx-stop:hover, .bx-wrapper .bx-controls-auto .bx-stop.active {
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
   background-position: -86px -33px; }
 
 /* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
@@ -1092,15 +1129,19 @@ body {
 
 .multiSelect .vertical {
   float: none; }
+
 .multiSelect .line {
   max-height: 34px;
   overflow: hidden; }
+
 .multiSelect .acol {
   display: inline-block;
   min-width: 12px;
   padding-right: 7px; }
+
 .multiSelect .inlineBlock {
   display: inline-block; }
+
 .multiSelect .button {
   display: block;
   position: relative;
@@ -1120,9 +1161,11 @@ body {
   white-space: normal;
   background-color: #fff;
   background-image: linear-gradient(#fff, #f7f7f7); }
+
 .multiSelect .buttonLabel {
   display: inline-block;
   padding: 5px 0; }
+
 .multiSelect .caret {
   display: inline-block;
   width: 0;
@@ -1133,6 +1176,7 @@ body {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
   border-bottom: 0 dotted; }
+
 .multiSelect .checkboxLayer {
   background-color: #fff;
   position: absolute;
@@ -1141,9 +1185,11 @@ body {
   border-radius: 10px;
   display: none !important;
   margin-right: 30px; }
+
 .multiSelect .helperContainer {
   border-bottom: 1px solid #ddd;
   padding: 8px 8px 0 8px; }
+
 .multiSelect .helperButton {
   display: inline;
   text-align: center;
@@ -1158,6 +1204,7 @@ body {
   margin: 0 0 8px 0; }
   .multiSelect .helperButton:focus {
     border: 1px solid #66afe9 !important; }
+
 .multiSelect .clearButton {
   position: absolute;
   display: inline;
@@ -1175,6 +1222,7 @@ body {
   top: 2px; }
   .multiSelect .clearButton:focus {
     border: 1px solid #66afe9 !important; }
+
 .multiSelect .inputFilter {
   border-radius: 2px;
   border: 1px solid #ccc;
@@ -1189,11 +1237,14 @@ body {
   margin: 0 0 8px 0; }
   .multiSelect .inputFilter:focus {
     border: 1px solid #66afe9 !important; }
+
 .multiSelect .checkBoxContainer {
   display: inline-block;
   padding: 5px; }
+
 .multiSelect .show {
   display: block !important; }
+
 .multiSelect .multiSelectItem {
   display: block;
   padding: 2px 0;
@@ -1213,27 +1264,32 @@ body {
     border-right: 1px solid #d9d9d9; }
   .multiSelect .multiSelectItem span:hover {
     cursor: pointer; }
+
 .multiSelect .multiSelectGroup {
   display: block;
   clear: both; }
   .multiSelect .multiSelectGroup span:hover {
     cursor: pointer; }
+
 .multiSelect .multiSelectFocus {
   background-image: linear-gradient(#c1c1c1, #999) !important;
   color: #fff !important;
   cursor: pointer;
   border: 1px solid #ccc !important; }
+
 .multiSelect .tickMark {
   display: inline-block;
   position: absolute;
   right: 10px;
   top: 7px;
   font-size: 10px; }
+
 .multiSelect .checkbox {
   color: #ddd !important;
   position: absolute;
   left: -9999px;
   cursor: pointer; }
+
 .multiSelect .disabled {
   color: #c4c4c4 !important;
   cursor: not-allowed !important; }
@@ -1243,11 +1299,13 @@ body {
   .multiSelect .disabled label input:hover ~ span {
     color: #c4c4c4 !important;
     cursor: not-allowed !important; }
+
 .multiSelect img {
   vertical-align: middle;
   margin-bottom: 0;
   height: 22px;
   width: 22px; }
+
 .multiSelect .horizontal:not(.multiSelectGroup) {
   float: left; }
 
@@ -1650,10 +1708,8 @@ body, html {
   0% {
     transform: scale(0);
     opacity: 1; }
-
   75% {
     opacity: 1; }
-
   100% {
     transform: scale(1);
     opacity: 0; } }
@@ -1662,10 +1718,8 @@ body, html {
   0% {
     -webkit-transform: scale(0);
     opacity: 1; }
-
   75% {
     opacity: 1; }
-
   100% {
     -webkit-transform: scale(1);
     opacity: 0; } }
@@ -2017,6 +2071,5 @@ body, html {
 
 .si-icons {
   background-color: #ccc; }
-
 
 /*# sourceMappingURL=application.css.map */

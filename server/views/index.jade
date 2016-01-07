@@ -6,18 +6,18 @@ html(ng-app)
     base(href='/')
     link(rel='stylesheet', href='app/stylesheets/application.css')
     body(ng-controller='scrollCtrl')
-      section.preloader(preloader='')
-        .preloader-content
-          .progress
-            span(ng-bind-template='{{persent}}') 0
-            span %
+      //section.preloader(preloader='')
+      //  .preloader-content
+      //    .progress
+      //      span(ng-bind-template='{{persent}}') 0
+      //      span %
       rotation-drag-menu(abs-url='{{absUrl}}', menu='[{"text":"Гороскопы","src":"zodiac.jpg","link":"horoscopes"},{"text":"Гадания","src":"devination.jpg","link":"divination"},{"text":"Наши сны","src":"dream_interpretation.jpg","link":"our_dreams"},{"text":"Протести- руй себя","src":"tests.jpg","link":"test_yourself"},{"text":"Красота и здоровье","src":"beauty_and_health.jpg","link":"beauty_and_health"},{"text":"Вкусности","src":"food.jpg","link":"delicious"},{"text":"Имена","src":"names.jpg","link":"what_is_it_in_my_name"}]')
       .wrapper
         header.header
           a.wrapper-logo(href='/')
             img(src="app/images/logo.png", alt='logo', title='logo')
-          .also-articles-slider
-            bxslider(url='headerSlider', options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}')
+          //.also-articles-slider
+          //  bxslider(url='headerSlider', options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}')
           .authentication-block
             ul.nav.nav-pills.pull-right
               li(ng-show='!user.id')

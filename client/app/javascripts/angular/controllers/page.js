@@ -10,4 +10,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=../../angular/controllers/page.js.map
+//# sourceMappingURL=page.js.map

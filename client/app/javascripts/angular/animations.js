@@ -41,4 +41,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=../angular/animations.js.map
+//# sourceMappingURL=animations.js.map
