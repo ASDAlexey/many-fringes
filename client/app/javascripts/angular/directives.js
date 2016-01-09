@@ -289,7 +289,7 @@
       }
     ];
     directives.cube = [
-      "config", "$rootScope", function(config, $rootScope) {
+      "config", "$rootScope", "$timeout", function(config, $rootScope, $timeout) {
         return {
           restrict: "E",
           replace: true,
@@ -300,42 +300,46 @@
           },
           templateUrl: "app/templates/cube.html",
           link: function(scope, element) {
-            var hoverEffect, tl;
             scope.config = config;
-            if (cssua.ua && cssua.ua.ie <= 11.0) {
-              CSSPlugin.defaultTransformPerspective = 1000;
-              TweenMax.set($(element).find('.cont .back'), {
-                rotationY: -180
+            return scope.$applyAsync(function() {
+              return $timeout(function() {
+                var hoverEffect, tl;
+                if (cssua.ua && cssua.ua.ie <= 11.0) {
+                  CSSPlugin.defaultTransformPerspective = 1000;
+                  TweenMax.set($(element).find('.cont .back'), {
+                    rotationY: -180
+                  });
+                  tl = new TimelineMax({
+                    paused: true
+                  });
+                  tl.to($(element).find('.cont .front'), 1, {
+                    rotationY: 180
+                  }).to($(element).find('.cont .back'), 1, {
+                    rotationY: 0
+                  }, 0);
+                  angular.element(element).on("mouseenter touch", function() {
+                    return tl.play();
+                  });
+                  return angular.element(element).on("mouseleave touch", function() {
+                    return tl.reverse();
+                  });
+                } else {
+                  TweenMax.to($(element).find('.cont'), 0, {
+                    rotationY: "17"
+                  });
+                  hoverEffect = TweenMax.to($(element).find('.cont'), 0.5, {
+                    rotationY: "90"
+                  });
+                  hoverEffect.pause();
+                  angular.element(element).on("mouseenter touch", function() {
+                    return hoverEffect.play();
+                  });
+                  return angular.element(element).on("mouseleave touch", function() {
+                    return hoverEffect.reverse();
+                  });
+                }
               });
-              tl = new TimelineMax({
-                paused: true
-              });
-              tl.to($(element).find('.cont .front'), 1, {
-                rotationY: 180
-              }).to($(element).find('.cont .back'), 1, {
-                rotationY: 0
-              }, 0);
-              angular.element(element).on("mouseenter touch", function() {
-                return tl.play();
-              });
-              return angular.element(element).on("mouseleave touch", function() {
-                return tl.reverse();
-              });
-            } else {
-              TweenMax.to($(element).find('.cont'), 0, {
-                rotationY: "17"
-              });
-              hoverEffect = TweenMax.to($(element).find('.cont'), 0.5, {
-                rotationY: "90"
-              });
-              hoverEffect.pause();
-              angular.element(element).on("mouseenter touch", function() {
-                return hoverEffect.play();
-              });
-              return angular.element(element).on("mouseleave touch", function() {
-                return hoverEffect.reverse();
-              });
-            }
+            });
           }
         };
       }

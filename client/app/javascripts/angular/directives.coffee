@@ -441,7 +441,8 @@ define [
   directives.cube = [
     "config"
     "$rootScope"
-    (config,$rootScope) ->
+    "$timeout"
+    (config,$rootScope,$timeout) ->
       restrict : "E"
       replace : true,
       scope :
@@ -451,29 +452,33 @@ define [
       templateUrl : "app/templates/cube.html"
       link : (scope,element)->
         scope.config = config
-        if (cssua.ua and cssua.ua.ie <= 11.0)
-          CSSPlugin.defaultTransformPerspective = 1000
-          TweenMax.set($(element).find('.cont .back'),{
-            rotationY : -180
-          })
-          tl = new TimelineMax({paused : true});
-          tl
-          .to($(element).find('.cont .front'),1,{rotationY : 180})
-          .to($(element).find('.cont .back'),1,{rotationY : 0},0)
-          angular.element(element).on "mouseenter touch",->
-            tl.play()
-          angular.element(element).on "mouseleave touch",->
-            tl.reverse()
-        else
-          TweenMax.to $(element).find('.cont'),0,
-            rotationY : "17"
-          hoverEffect = TweenMax.to $(element).find('.cont'),0.5,
-            rotationY : "90"
-          hoverEffect.pause()
-          angular.element(element).on "mouseenter touch",->
-            hoverEffect.play()
-          angular.element(element).on "mouseleave touch",->
-            hoverEffect.reverse()
+        scope.$applyAsync(()->
+          $timeout(->
+            if (cssua.ua and cssua.ua.ie <= 11.0)
+              CSSPlugin.defaultTransformPerspective = 1000
+              TweenMax.set($(element).find('.cont .back'),{
+                rotationY : -180
+              })
+              tl = new TimelineMax({paused : true})
+              tl
+              .to($(element).find('.cont .front'),1,{rotationY : 180})
+              .to($(element).find('.cont .back'),1,{rotationY : 0},0)
+              angular.element(element).on "mouseenter touch",->
+                tl.play()
+              angular.element(element).on "mouseleave touch",->
+                tl.reverse()
+            else
+              TweenMax.to $(element).find('.cont'),0,
+                rotationY : "17"
+              hoverEffect = TweenMax.to $(element).find('.cont'),0.5,
+                rotationY : "90"
+              hoverEffect.pause()
+              angular.element(element).on "mouseenter touch",->
+                hoverEffect.play()
+              angular.element(element).on "mouseleave touch",->
+                hoverEffect.reverse()
+          )
+        )
   ]
   directives.scrollUp = [
     "$timeout"
