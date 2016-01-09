@@ -125,7 +125,7 @@
       }
     ];
     controllers.indexCtrl = [
-      "$scope", "$location", "config", "$rootScope", "Article", "$sce", function($scope, $location, config, $rootScope, Articles, $sce) {
+      "$scope", "$location", "config", "$rootScope", "Linecategory", "$sce", function($scope, $location, config, $rootScope, Linecategory, $sce) {
         $scope.absUrl = $location.absUrl();
         $scope.menu = [];
         $scope.config = config;
@@ -160,16 +160,59 @@
             "height": 1363
           }
         ];
-        return $scope.fullPathCategoryImages = _.each($scope.categoryImages, function(value) {
+        $scope.fullPathCategoryImages = _.each($scope.categoryImages, function(value) {
           return value.src = 'app/images/categories_images/' + value.src;
+        });
+
+        /*Linecategory.find().$promise.then (data) ->
+          $scope.categories = data
+         */
+
+        /*$scope.aInvocies = Invoice.find({
+          filter: {
+            include: ["merchant", "staff"],
+            limit: params.count(),
+            offset: (params.page() - 1) * params.count(),
+            order: gridManager.fnTableSortingToApiParams(params.sorting()),
+            where: gridManager.fnTableFiltersToApiParams(params.filter())
+          }
+        }, function(aInvocies){
+        // Query to get Staffs count
+        // @todo: maybe get stuff amount just once - but problem with updating
+        Invoice.count({
+          where: gridManager.fnTableFiltersToApiParams(params.filter())
+        }, function(oCountData){
+        // Update table params
+        params.total(oCountData.count);
+        // Set new data
+        
+        $defer.resolve(aInvocies);
+        });
+        }, function(oError){
+            $scope.oErrors = errorParser.parseValidationError(oError, {}, $scope.aMessages);
+        });
+         */
+        return $scope.linecategories = Linecategory.find({
+          filter: {
+            include: ["categories"]
+          }
+        }, function(arr) {
+          return console.log(arr);
+        }, function(err) {
+          return console.log(err);
         });
       }
     ];
     controllers.lineCategoryCtrl = [
-      "$scope", "$location", "config", "$rootScope", "$stateParams", "Article", function($scope, $location, config, $rootScope, $stateParams, Article) {
+      "$scope", "$location", "config", "$rootScope", "$stateParams", "Linecategory", "Article", function($scope, $location, config, $rootScope, $stateParams, Linecategory, Article) {
         $scope.absUrl = $location.absUrl();
         $scope.params = $stateParams;
-        return console.log($scope.absUrl);
+        console.log($scope.absUrl);
+        return $scope.Linecategory = Linecategory.find(function(list) {
+          return console.log('s');
+        }, function(errorResponse) {
+          return console.log('rrr');
+        });
       }
     ];
     controllers.categoryCtrl = [

@@ -855,7 +855,7 @@
           restrict: "A",
           link: function(scope, element) {
             var ChainSlider;
-            ChainSlider = (function() {
+            return ChainSlider = (function() {
               function ChainSlider(options) {
                 this.options = options;
                 if (options.lists.length <= 6) {
@@ -956,19 +956,20 @@
                 })(this));
               };
 
+              scope.$applyAsync(function() {
+                var options, tl;
+                options = {
+                  el: $(element),
+                  lists: $(element).find('.sub-category>li'),
+                  time: 1.2
+                };
+                tl = new TimelineLite();
+                return new ChainSlider(options);
+              });
+
               return ChainSlider;
 
             })();
-            return $rootScope.$on('isDomRender', function(event, data) {
-              var options, tl;
-              options = {
-                el: $(element),
-                lists: $(element).find('.sub-category>li'),
-                time: 1.2
-              };
-              tl = new TimelineLite();
-              return new ChainSlider(options);
-            });
           }
         };
       }

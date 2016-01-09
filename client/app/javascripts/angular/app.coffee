@@ -14,6 +14,8 @@ define [
   "angularScroll"
   "angularYmaps"
   "angularMultiSelect"
+  "angularResource"
+  "lbServices"
   "ngTokenAuth"
 #  "angularRender"
   "angularOff",
@@ -35,8 +37,10 @@ define [
     "duScroll"
     "yaMap"
     "multi-select"
+    "ngResource"
+    "lbServices"
     "ng-token-auth"
 #    "ngRender"
-    "angular-off",
+    "angular-off"
   ])
   app

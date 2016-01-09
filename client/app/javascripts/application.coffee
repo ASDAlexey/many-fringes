@@ -47,6 +47,7 @@ require.config
     services : "angular/services"
     filters : "angular/filters"
     animations : "angular/animations"
+    lbServices : "angular/angular-sdk"
     routes : "angular/routes"
   shim :
     angular :
@@ -58,6 +59,7 @@ require.config
     angularCookies : ["angular"]
     angularSanitize : ["angular"]
     angularTouch : ["angular"]
+    lbServices : ["angular","angularResource"]
 #    angularRoute : ["angular"]
     angularLoader : ["angular"]
     angularScroll : ["angular"]

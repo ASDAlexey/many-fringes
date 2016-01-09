@@ -5,7 +5,9 @@
   "scripts": {
     "pretest": "jshint .",
     "start": "node .",
-    "test": "mocha test/*test.js"
+    "test": "mocha test/*test.js",
+    "lb-ng-doc": "lb-ng-doc client/app/javascripts/angular/angular-sdk.js",
+    "lb-ng": "lb-ng server/server.js client/app/javascripts/angular/angular-sdk.js"
   },
   "dependencies": {
     "body-parser": "^1.10.1",

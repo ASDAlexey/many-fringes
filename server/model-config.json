@@ -38,5 +38,21 @@
   "project": {
     "dataSource": "db",
     "public": true
+  },
+  "Linecategory": {
+    "dataSource": "relationalDB",
+    "public": true
+  },
+  "Category": {
+    "dataSource": "relationalDB",
+    "public": true
+  },
+  "Article": {
+    "dataSource": "relationalDB",
+    "public": true
+  },
+  "CategoryImage": {
+    "dataSource": "relationalDB",
+    "public": true
   }
 }

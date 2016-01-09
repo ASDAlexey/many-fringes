@@ -43,7 +43,7 @@ module.exports=function(app){
   router.get('/*',function(req,res,next){
     //res.sendfile(__dirname + '/client/index.html');
     var ext=(req.url.indexOf('.')!== -1)?req.url.substr(req.url.lastIndexOf('.')+1):null;
-    if(!req.xhr&& !ext){
+    if(!req.xhr && req.url.indexOf('/api/')==-1 && !ext){
       res.render('index',{});
     }else
       next();

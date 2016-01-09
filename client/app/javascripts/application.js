@@ -40,6 +40,7 @@
       services: "angular/services",
       filters: "angular/filters",
       animations: "angular/animations",
+      lbServices: "angular/angular-sdk",
       routes: "angular/routes"
     },
     shim: {
@@ -53,6 +54,7 @@
       angularCookies: ["angular"],
       angularSanitize: ["angular"],
       angularTouch: ["angular"],
+      lbServices: ["angular", "angularResource"],
       angularLoader: ["angular"],
       angularScroll: ["angular"],
       angularYmaps: ["angular"],

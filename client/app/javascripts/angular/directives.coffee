@@ -901,14 +901,14 @@ define [
               $timeout (=>
                 @enableSwitchSlider(ect)
               ),(@options.time * 1000 + 100) * 3
-        $rootScope.$on('isDomRender',(event,data)->
-          options =
-            el : $(element)
-            lists : $(element).find('.sub-category>li')
-            time : 1.2
-          tl = new TimelineLite()
-          new ChainSlider(options)
-        )
+          scope.$applyAsync(()->
+            options =
+              el : $(element)
+              lists : $(element).find('.sub-category>li')
+              time : 1.2
+            tl = new TimelineLite()
+            new ChainSlider(options)
+          )
 #        scope.$on '$nodesDOMRendered',(e)=>
 #          console.log('render')
 #          options =

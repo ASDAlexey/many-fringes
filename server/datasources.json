@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "relationalDB": {
-    "name": "relationalDB",
-    "connector": "mysql",
     "host": "localhost",
     "port": 3306,
-    "username": "root",
-    "password": "1234",
     "database": "many-fringes",
+    "username": "root",
+    "password": "",
+    "name": "relationalDB",
+    "connector": "mysql",
     "createDatabase": true,
     "charset": "utf8",
     "collation": "utf8_general_ci"

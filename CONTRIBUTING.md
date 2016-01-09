@@ -1,3 +1,5 @@
+### lbServices ###
+lb-ng ../server/server.js js/lb-services.js
 ### Contributing ###
 
 Thank you for your interest in `loopback-example-access-control`, an open source project

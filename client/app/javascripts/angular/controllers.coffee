@@ -47,9 +47,9 @@ define [
           arrFilesBeforeSend : []
           currentLoadPersent : 0
         }
-      $scope.removeServerFile=()->
+      $scope.removeServerFile = ()->
 
-      $scope.removeFile=(file,nameGroup)->
+      $scope.removeFile = (file,nameGroup)->
         $scope.filesObj[nameGroup].arrFilesBeforeSend.splice($scope.filesObj[nameGroup].arrFilesBeforeSend.indexOf(file),1)
       $scope.send = (filesObj,url)=>
         promise = $q.all({})
@@ -146,9 +146,9 @@ define [
     "$location"
     "config"
     "$rootScope"
-    "Article"
+    "Linecategory"
     "$sce"
-    ($scope,$location,config,$rootScope,Articles,$sce) ->
+    ($scope,$location,config,$rootScope,Linecategory,$sce) ->
       $scope.absUrl = $location.absUrl()
       $scope.menu = []
       $scope.config = config
@@ -192,8 +192,37 @@ define [
       $scope.fullPathCategoryImages = _.each($scope.categoryImages,(value)->
         value.src = 'app/images/categories_images/' + value.src
       )
-#      Articles.findAll('linecategories').then (data) ->
-#        $scope.categories = data
+      ###Linecategory.find().$promise.then (data) ->
+        $scope.categories = data###
+      ###$scope.aInvocies = Invoice.find({
+        filter: {
+          include: ["merchant", "staff"],
+          limit: params.count(),
+          offset: (params.page() - 1) * params.count(),
+          order: gridManager.fnTableSortingToApiParams(params.sorting()),
+          where: gridManager.fnTableFiltersToApiParams(params.filter())
+        }
+      }, function(aInvocies){
+      // Query to get Staffs count
+      // @todo: maybe get stuff amount just once - but problem with updating
+      Invoice.count({
+        where: gridManager.fnTableFiltersToApiParams(params.filter())
+      }, function(oCountData){
+      // Update table params
+      params.total(oCountData.count);
+      // Set new data
+
+      $defer.resolve(aInvocies);
+      });
+      }, function(oError){
+    $scope.oErrors = errorParser.parseValidationError(oError, {}, $scope.aMessages);
+      });###
+      $scope.linecategories = Linecategory.find({filter:{include : ["categories"]}},
+        (arr) ->
+          console.log(arr)
+        (err) ->
+          console.log(err)
+      )
   ]
   controllers.lineCategoryCtrl = [
     "$scope"
@@ -201,11 +230,18 @@ define [
     "config"
     "$rootScope"
     "$stateParams"
+    "Linecategory"
     "Article"
-    ($scope,$location,config,$rootScope,$stateParams,Article) ->
+    ($scope,$location,config,$rootScope,$stateParams,Linecategory,Article) ->
       $scope.absUrl = $location.absUrl()
       $scope.params = $stateParams;
       console.log($scope.absUrl)
+      $scope.Linecategory = Linecategory.find(
+        (list) ->
+          console.log('s')
+        (errorResponse) ->
+          console.log('rrr')
+      )
 #      Article.findOne($scope.params.lineCategory,'linecategories').then (data) ->
 #        $scope.categories = data
 #        console.log($scope.categories)
@@ -524,16 +560,16 @@ define [
     ($scope) ->
       $scope.geoObjects = [
         {
-        # Геометрия = тип объекта + географические координаты объекта
+# Геометрия = тип объекта + географические координаты объекта
           geometry :
-          # Тип геометрии - точка
+# Тип геометрии - точка
             type : "Point"
-          # Координаты точки.
+# Координаты точки.
             coordinates : [
               37.443915
               55.710896
             ]
-        # Свойства
+# Свойства
           properties :
             hintContent : "Москва, ул.Верейская ул. д17"
         }
