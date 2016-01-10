@@ -45,7 +45,7 @@ module.exports=function(app){
   app.dataSources.relationalDB.automigrate('Category',function(err){
     if(err) throw err;
     app.models.Category.create([{
-      "name":"Японский гороскоп",
+      "name":"Японский гороскоп555777",
       "slug":"japanese_horoscope",
       "order":1,
       "title":"title-japanese_horoscope",
@@ -56,7 +56,7 @@ module.exports=function(app){
       "linecategoryId":1
     }],function(err,models){
       if(err) throw err;
-      console.log('Models created: \n',models);
+      //console.log('Models created: \n',models);
     });
   });
   /*app.dataSources.relationalDB.automigrate('CategoryImage',function(err){

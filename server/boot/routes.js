@@ -4,7 +4,6 @@ module.exports=function(app){
   //router.get('/',function(req,res){
   //  res.render('index',{});
   //});
-
   router.get('/admin',function(req,res){
     res.render('login');
   });
