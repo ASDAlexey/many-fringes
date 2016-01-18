@@ -13,6 +13,7 @@ define [
 #  "photobox"
 ],(angular,$,_,services,TweenMax,bxSlider,Draggable) ->
   "use strict"
+
   # Directives
   directive = angular.module("App.directives",["App.services"])
   directives = {}
