@@ -1551,6 +1551,8 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate3d(-50%, -50%, 0); }
+    .list-categories > li > .wrapper-content-list:hover .sub-category {
+      visibility: visible; }
     .list-categories > li > .wrapper-content-list .title {
       margin-top: 7px;
       text-align: center; }
@@ -1570,7 +1572,8 @@ body, html {
     .list-categories > li > .wrapper-content-list .sub-category {
       white-space: nowrap;
       margin-top: 15px;
-      text-align: center; }
+      text-align: center;
+      visibility: hidden; }
       .list-categories > li > .wrapper-content-list .sub-category > li {
         white-space: normal;
         position: relative;
