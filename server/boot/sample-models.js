@@ -1,3 +1,5 @@
+var categoryFixtures=require('../fixtures/category.json');
+
 module.exports=function(app){
   var User=app.models.user;
   var Role=app.models.Role;
@@ -44,13 +46,36 @@ module.exports=function(app){
    */
   app.dataSources.relationalDB.automigrate('Category',function(err){
     if(err) throw err;
-    app.models.Category.create([{
-      "name":"Японский гороскоп555777",
-      "slug":"japanese_horoscope",
+    app.models.Category.create(categoryFixtures,function(err,models){
+      if(err) throw err;
+      //console.log('Models created: \n',models);
+    });
+  });
+  app.dataSources.relationalDB.automigrate('Article',function(err){
+    if(err) throw err;
+    app.models.Article.create([{
+      "name":"Бык",
+      "slug":"bull",
       "order":1,
-      "title":"title-japanese_horoscope",
-      "keywords":"keywords-japanese_horoscope",
-      "description":"description-japanese_horoscope",
+      "title":"title-bull",
+      "keywords":"keywords-bull",
+      "description":"description-bull",
+      "created_at":0,
+      "updated_at":0,
+      "categoryId":1
+    }],function(err,models){
+      if(err) throw err;
+      //console.log('Models created: \n',models);
+    });
+  });
+
+  app.dataSources.relationalDB.automigrate('LinecategoryImage',function(err){
+    if(err) throw err;
+    app.models.LinecategoryImage.create([{
+      "src":"zodiac.jpg",
+      "alt":"horoscopes",
+      "width":null,
+      "height":null,
       "created_at":0,
       "updated_at":0,
       "linecategoryId":1
@@ -59,35 +84,34 @@ module.exports=function(app){
       //console.log('Models created: \n',models);
     });
   });
-  /*app.dataSources.relationalDB.automigrate('CategoryImage',function(err){
-   if(err) throw err;
-   app.models.CategoryImage.create([{
-   "name":"Японский гороскоп",
-   "slug":"japanese_horoscope",
-   "order":1,
-   "title":"title-japanese_horoscope",
-   "keywords":"keywords-japanese_horoscope",
-   "description":"description-japanese_horoscope",
-   "created_at":0,
-   "updated_at":0
-   }],function(err,models){
-   if(err) throw err;
-   console.log('Models created: \n',models);
-   });
-   });*/
-  /*app.dataSources.relationalDB.automigrate('CategoryImage',function(err){
-   if(err) throw err;
-   app.models.CategoryImage.create([{
-   "src":"zodiac.jpg",
-   "alt":"horoscopes",
-   "width":null,
-   "height":null,
-   "created_at":0,
-   "updated_at":0,
-   "linecategoryId":1
-   }],function(err,models){
-   if(err) throw err;
-   console.log('Models created: \n',models);
-   });
-   });*/
+  app.dataSources.relationalDB.automigrate('CategoryImage',function(err){
+    if(err) throw err;
+    app.models.CategoryImage.create([{
+      "src":"zodiac.jpg",
+      "alt":"horoscopes",
+      "width":null,
+      "height":null,
+      "created_at":0,
+      "updated_at":0,
+      "categoryId":1
+    }],function(err,models){
+      if(err) throw err;
+      //console.log('Models created: \n',models);
+    });
+  });
+  app.dataSources.relationalDB.automigrate('ArticleImage',function(err){
+    if(err) throw err;
+    app.models.ArticleImage.create([{
+      "src":"zodiac.jpg",
+      "alt":"horoscopes",
+      "width":null,
+      "height":null,
+      "created_at":0,
+      "updated_at":0,
+      "articleId":1
+    }],function(err,models){
+      if(err) throw err;
+      //console.log('Models created: \n',models);
+    });
+  });
 };

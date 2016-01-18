@@ -33,7 +33,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "categoryImage": {
+      "type": "hasOne",
+      "model": "CategoryImage"
+    },
+    "articles": {
+      "type": "hasMany",
+      "model": "Article"
+    }
+  },
   "acls": [],
   "methods": {}
 }

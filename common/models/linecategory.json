@@ -36,9 +36,9 @@
   },
   "validations": [],
   "relations": {
-    "categoryImages": {
-      "type": "hasMany",
-      "model": "CategoryImage"
+    "linecategoryImage": {
+      "type": "hasOne",
+      "model": "LinecategoryImage"
     },
     "categories": {
       "type": "hasMany",

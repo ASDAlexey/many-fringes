@@ -1,0 +1,123 @@
+[
+  {
+    "name": "Японский гороскоп",
+    "slug": "japanese_horoscope",
+    "order": 1,
+    "title": "title-japanese_horoscope",
+    "keywords": "keywords-japanese_horoscope",
+    "description": "description-japanese_horoscope",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Китайский гороскоп",
+    "slug": "chine_horoscope",
+    "order": 1,
+    "title": "title-chine_horoscope",
+    "keywords": "keywords-chine_horoscope",
+    "description": "description-chine_horoscope",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Друидов",
+    "slug": "druids",
+    "order": 1,
+    "title": "title-druids",
+    "keywords": "keywords-druids",
+    "description": "description-druids",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Цветочный гороскоп",
+    "slug": "cvet",
+    "order": 1,
+    "title": "title-cvet",
+    "keywords": "keywords-cvet",
+    "description": "description-cvet",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Цветочный гороскоп",
+    "slug": "cvet",
+    "order": 1,
+    "title": "title-cvet",
+    "keywords": "keywords-cvet",
+    "description": "description-cvet",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Зароастрийский гороскоп",
+    "slug": "zaroostr",
+    "order": 1,
+    "title": "title-zaroostr",
+    "keywords": "keywords-zaroostr",
+    "description": "description-zaroostr",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Греческий гороскоп",
+    "slug": "greek",
+    "order": 1,
+    "title": "title-greek",
+    "keywords": "keywords-greek",
+    "description": "description-greek",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Мифический гороскоп",
+    "slug": "miph",
+    "order": 1,
+    "title": "title-miph",
+    "keywords": "keywords-miph",
+    "description": "description-miph",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Гадания",
+    "slug": "devination",
+    "order": 1,
+    "title": "title-devination",
+    "keywords": "keywords-devination",
+    "description": "description-devination",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 1
+  },
+  {
+    "name": "Гадания1",
+    "slug": "devination",
+    "order": 1,
+    "title": "title-devination",
+    "keywords": "keywords-devination",
+    "description": "description-devination",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 2
+  },
+  {
+    "name": "Гадания2",
+    "slug": "devination",
+    "order": 1,
+    "title": "title-devination",
+    "keywords": "keywords-devination",
+    "description": "description-devination",
+    "created_at": 0,
+    "updated_at": 0,
+    "linecategoryId": 2
+  }
+]

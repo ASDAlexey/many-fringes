@@ -1,32 +1,23 @@
 {
-  "name": "Article",
+  "name": "ArticleImage",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string"
-    },
-    "slug": {
+    "src": {
       "type": "string",
       "required": true
     },
-    "order": {
+    "alt": {
+      "type": "string"
+    },
+    "width": {
       "type": "number"
     },
-    "title": {
-      "type": "string"
-    },
-    "keywords": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "text": {
-      "type": "string"
+    "height": {
+      "type": "number"
     },
     "created_at": {
       "type": "number"
@@ -36,12 +27,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "articleImage": {
-      "type": "hasOne",
-      "model": "ArticleImage"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

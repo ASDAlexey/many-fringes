@@ -54,5 +54,13 @@
   "CategoryImage": {
     "dataSource": "relationalDB",
     "public": true
+  },
+  "LinecategoryImage": {
+    "dataSource": "relationalDB",
+    "public": true
+  },
+  "ArticleImage": {
+    "dataSource": "relationalDB",
+    "public": true
   }
 }
