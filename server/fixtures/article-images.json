@@ -1,0 +1,110 @@
+[
+  {
+    "src": "bull.jpg",
+    "alt": "bull",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 1
+  },
+  {
+    "src": "cockerel.jpg",
+    "alt": "cockerel",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 2
+  },
+  {
+    "src": "dog.jpg",
+    "alt": "dog",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 3
+  },
+  {
+    "src": "dragon.jpg",
+    "alt": "dragon",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 4
+  },
+  {
+    "src": "goat.jpg",
+    "alt": "goat",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 5
+  },
+  {
+    "src": "horse.jpg",
+    "alt": "horse",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 6
+  },
+  {
+    "src": "monkey.jpg",
+    "alt": "monkey",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 7
+  },
+  {
+    "src": "pig.jpg",
+    "alt": "pig",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 8
+  },
+  {
+    "src": "rabbit.jpg",
+    "alt": "rabbit",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 9
+  },
+  {
+    "src": "rat.jpg",
+    "alt": "rat",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 10
+  },
+  {
+    "src": "snake.jpg",
+    "alt": "snake",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 11
+  },
+  {
+    "src": "tiger.jpg",
+    "alt": "tiger",
+    "width": null,
+    "height": null,
+    "created_at": 0,
+    "updated_at": 0,
+    "articleId": 12
+  }
+]

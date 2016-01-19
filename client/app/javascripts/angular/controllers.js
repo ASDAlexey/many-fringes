@@ -163,35 +163,6 @@
         $scope.fullPathCategoryImages = _.each($scope.categoryImages, function(value) {
           return value.src = 'app/images/categories_images/' + value.src;
         });
-
-        /*Linecategory.find().$promise.then (data) ->
-          $scope.categories = data
-         */
-
-        /*$scope.aInvocies = Invoice.find({
-          filter: {
-            include: ["merchant", "staff"],
-            limit: params.count(),
-            offset: (params.page() - 1) * params.count(),
-            order: gridManager.fnTableSortingToApiParams(params.sorting()),
-            where: gridManager.fnTableFiltersToApiParams(params.filter())
-          }
-        }, function(aInvocies){
-        // Query to get Staffs count
-        // @todo: maybe get stuff amount just once - but problem with updating
-        Invoice.count({
-          where: gridManager.fnTableFiltersToApiParams(params.filter())
-        }, function(oCountData){
-        // Update table params
-        params.total(oCountData.count);
-        // Set new data
-        
-        $defer.resolve(aInvocies);
-        });
-        }, function(oError){
-            $scope.oErrors = errorParser.parseValidationError(oError, {}, $scope.aMessages);
-        });
-         */
         return $scope.linecategories = Linecategory.find({
           filter: {
             include: ["categories"]
@@ -208,10 +179,18 @@
         $scope.absUrl = $location.absUrl();
         $scope.params = $stateParams;
         console.log($scope.absUrl);
-        return $scope.Linecategory = Linecategory.find(function(list) {
-          return console.log('s');
-        }, function(errorResponse) {
-          return console.log('rrr');
+        console.log($scope.params);
+        return $scope.linecategory = Linecategory.findOne({
+          filter: {
+            where: {
+              slug: $scope.params.lineCategory
+            },
+            include: ["categories", "linecategoryImage"]
+          }
+        }, function(arr) {
+          return console.log(arr);
+        }, function(err) {
+          return console.log(err);
         });
       }
     ];

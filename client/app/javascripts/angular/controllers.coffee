@@ -192,37 +192,11 @@ define [
       $scope.fullPathCategoryImages = _.each($scope.categoryImages,(value)->
         value.src = 'app/images/categories_images/' + value.src
       )
-      ###Linecategory.find().$promise.then (data) ->
-        $scope.categories = data###
-      ###$scope.aInvocies = Invoice.find({
-        filter: {
-          include: ["merchant", "staff"],
-          limit: params.count(),
-          offset: (params.page() - 1) * params.count(),
-          order: gridManager.fnTableSortingToApiParams(params.sorting()),
-          where: gridManager.fnTableFiltersToApiParams(params.filter())
-        }
-      }, function(aInvocies){
-      // Query to get Staffs count
-      // @todo: maybe get stuff amount just once - but problem with updating
-      Invoice.count({
-        where: gridManager.fnTableFiltersToApiParams(params.filter())
-      }, function(oCountData){
-      // Update table params
-      params.total(oCountData.count);
-      // Set new data
-
-      $defer.resolve(aInvocies);
-      });
-      }, function(oError){
-    $scope.oErrors = errorParser.parseValidationError(oError, {}, $scope.aMessages);
-      });###
-      $scope.linecategories = Linecategory.find({filter:{include : ["categories"]}},
+      $scope.linecategories = Linecategory.find({filter : {include : ["categories"]}},
         (arr) ->
           console.log(arr)
         (err) ->
-          console.log(err)
-      )
+          console.log(err))
   ]
   controllers.lineCategoryCtrl = [
     "$scope"
@@ -236,15 +210,13 @@ define [
       $scope.absUrl = $location.absUrl()
       $scope.params = $stateParams;
       console.log($scope.absUrl)
-      $scope.Linecategory = Linecategory.find(
-        (list) ->
-          console.log('s')
-        (errorResponse) ->
-          console.log('rrr')
+      console.log($scope.params)
+      $scope.linecategory = Linecategory.findOne(filter : {where : {slug : $scope.params.lineCategory},include : ["categories","linecategoryImage"]},
+        (arr) ->
+          console.log(arr)
+        (err) ->
+          console.log(err)
       )
-#      Article.findOne($scope.params.lineCategory,'linecategories').then (data) ->
-#        $scope.categories = data
-#        console.log($scope.categories)
   ]
   controllers.categoryCtrl = [
     "$scope"

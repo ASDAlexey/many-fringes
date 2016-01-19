@@ -1,0 +1,134 @@
+[
+  {
+    "name": "Бык",
+    "slug": "bull",
+    "order": 1,
+    "title": "title-bull",
+    "keywords": "keywords-bull",
+    "description": "description-bull",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Петух",
+    "slug": "rooster",
+    "order": 1,
+    "title": "title-rooster",
+    "keywords": "keywords-rooster",
+    "description": "description-rooster",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Собака",
+    "slug": "dog",
+    "order": 3,
+    "title": "title-dog",
+    "keywords": "keywords-dog",
+    "description": "description-dog",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Дракон",
+    "slug": "dragon",
+    "order": 4,
+    "title": "title-dragon",
+    "keywords": "keywords-dragon",
+    "description": "description-dragon",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Коза",
+    "slug": "goat",
+    "order": 5,
+    "title": "title-goat",
+    "keywords": "keywords-goat",
+    "description": "description-goat",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Лошадь",
+    "slug": "horse",
+    "order": 6,
+    "title": "title-horse",
+    "keywords": "keywords-horse",
+    "description": "description-horse",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Обезьяна",
+    "slug": "monkey",
+    "order": 7,
+    "title": "title-monkey",
+    "keywords": "keywords-monkey",
+    "description": "description-monkey",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Кабан",
+    "slug": "pig",
+    "order": 8,
+    "title": "title-pig",
+    "keywords": "keywords-pig",
+    "description": "description-pig",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Кролик",
+    "slug": "rabit",
+    "order": 9,
+    "title": "title-rabit",
+    "keywords": "keywords-rabit",
+    "description": "description-rabit",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Крыса",
+    "slug": "rat",
+    "order": 10,
+    "title": "title-rat",
+    "keywords": "keywords-rat",
+    "description": "description-rat",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Змея",
+    "slug": "snake",
+    "order": 11,
+    "title": "title-snake",
+    "keywords": "keywords-snake",
+    "description": "description-snake",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  },
+  {
+    "name": "Тигр",
+    "slug": "tiger",
+    "order": 12,
+    "title": "title-tiger",
+    "keywords": "keywords-tiger",
+    "description": "description-tiger",
+    "created_at": 0,
+    "updated_at": 0,
+    "categoryId": 1
+  }
+]

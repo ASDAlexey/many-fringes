@@ -32,13 +32,21 @@
     },
     "updated_at": {
       "type": "number"
+    },
+    "text": {
+      "type": "string",
+      "mysql": {
+        "dataType": "TEXT",
+        "dataLength": 21844
+      }
     }
   },
   "validations": [],
   "relations": {
     "linecategoryImage": {
       "type": "hasOne",
-      "model": "LinecategoryImage"
+      "model": "LinecategoryImage",
+      "foreignKey": "linecategoryId"
     },
     "categories": {
       "type": "hasMany",
