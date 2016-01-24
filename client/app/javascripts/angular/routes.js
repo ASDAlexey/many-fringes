@@ -41,7 +41,7 @@
         }).state('article', {
           url: "/:lineCategory/:category/:article",
           templateUrl: config.frontendTemplatesPath + "/category/article.html",
-          controller: "articleCtrl"
+          controller: "ArticleCtrl"
         });
         $locationProvider.html5Mode({
           enabled: true,

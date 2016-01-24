@@ -1,31 +1,46 @@
 <section>
-	<ul class="list-categories">
-		<li class="white" chain-slider show-cube ng-repeat="category in linecategories | orderBy:'order':false">
-		<!--<li class="white" show-cube ng-repeat="category in categories | orderBy:'order':false">-->
-			<img ng-src="{{fullPathCategoryImages[$index].src}}">
-			<div class="wrapper-content-list">
-				<h1 class="title"><a ng-href="{{category.slug}}" ng-bind-template="{{category.name}}"></a></h1>
-				<ul class="controlls-slider">
-					<li>
-						<a href="" class="left switch-slider">
-							<draw-svg width="80" height="80"
-									  elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 0.7,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowLeft',time: 800}]"></draw-svg>
-						</a>
-					</li>
-					<li>
-						<a href="" class="right switch-slider">
-							<draw-svg width="80" height="80"
-									  elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]"></draw-svg>
-						</a>
-					</li>
-				</ul>
-				<ul class="sub-category">
-					<li ng-repeat="lineInner in category.categories">
-						<cube  href-link="{{category.slug}}/{{lineInner.slug}}" text="Перейти" front="cube/japane.jpg"></cube>
-						<a class="link-text" ng-href="{{category.slug}}/{{lineInner.slug}}" hover>{{lineInner.name}}</a>
-					</li>
-				</ul>
-			</div>
-		</li>
-	</ul>
+  <ul class="list-categories">
+    <li class="white"
+        chain-slider
+        show-cube
+        ng-repeat="linecategory in linecategories | orderBy:'order':false">
+      <img ng-src="{{fullPathCategoryImages[$index].src}}">
+
+      <div class="wrapper-content-list">
+        <h1 class="title">
+          <a ng-href="{{linecategory.slug}}"
+             ng-bind="linecategory.name"></a>
+        </h1>
+        <ul class="controlls-slider">
+          <li>
+            <a href=""
+               class="left switch-slider">
+              <draw-svg width="80"
+                        height="80"
+                        elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 0.7,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowLeft',time: 800}]"></draw-svg>
+            </a>
+          </li>
+          <li>
+            <a href=""
+               class="right switch-slider">
+              <draw-svg width="80"
+                        height="80"
+                        elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]"></draw-svg>
+            </a>
+          </li>
+        </ul>
+        <ul class="sub-category">
+          <li ng-repeat="category in linecategory.categories">
+            <cube href-link="{{linecategory.slug}}/{{category.slug}}"
+                  text="Перейти"
+                  front="linecategory-images/{{category.categoryImage.src}}"></cube>
+            <a class="link-text"
+               ng-href="{{linecategory.slug}}/{{category.slug}}"
+               hover
+               ng-bind="category.name"></a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
 </section>

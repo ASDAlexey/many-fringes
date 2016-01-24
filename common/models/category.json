@@ -30,6 +30,9 @@
     },
     "updated_at": {
       "type": "number"
+    },
+    "text": {
+      "type": "string"
     }
   },
   "validations": [],

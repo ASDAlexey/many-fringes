@@ -1,45 +1,22 @@
 <article class="list-category">
 	<div class="row">
 		<div class="cell">
-			<h1 class="title"><a href="horoscopes/japanese_horoscope" class="backward">Назад</a><span>Бык</span></h1>
+			<h1 class="title">
+        <a ng-href="{{params.lineCategory}}/{{params.category}}" class="backward">Назад</a>
+        <span ng-bind="article.name"></span>
+      </h1>
 
 			<div class="wrapper-content">
 				<div class="wrapper-img">
-					<img src="app/images/horoscopes/japanese/bull.jpg" alt="list-horoscopes-image"/>
+					<img src="app/images/article-images/{{article.articleImage.src}}" ng-attr-alt="{{article.articleImage.alt}}"/>
 				</div>
 				<div class="content-list-category">
 					<div class="wrapper-date">
 						<h2><strong>Годы рождения:</strong></h2>
-						<time class="time" datetime="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021">..., 1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021...</time>
+						<time class="time"
+                  ng-attr-datetime="{{article.link_text}}">..., {{article.link_text}}...</time>
 					</div>
-					<div class="wrapper-conten-block">
-						<p>
-							Представители года Быка убежденные в своих возможностях люди. Бык живет размеренной жизнью, и может показаться, что трудности других его не
-							волнуют: а
-							только
-							лишь заботит его судьба, чужие проблемы ему неинтересны. Ко всем важным поступкам готовится очень усердно, взвешивая возможные итоги, а также
-							силы,
-							которые
-							придется приложить.
-						</p>
-
-						<p>Бык планомерно движется к задуманному и всегда знает, как этого достичь. Красноречив, имеет единомышленников, его уважают.
-						</p>
-
-						<p>Быки волевые натуры, интеллектуальны. Их интересы разнообразны, так как они серьезно изучают каждую грань бытия. Для Быка нет чего - то
-							недостойного
-							его
-							внимания, для него все очень интересно и будоражит его воображение.
-							Довольно своенравный Бык, легко поддается переубеждению, если чувствует логику в аргументах собеседника.
-						</p>
-
-						<p>
-							Обладает завидным запасом терпения, мирится с обстоятельствами пока его план реализуется, но если свершается что-то непредвиденное, то Бык
-							перестает
-							себя
-							контролировать. Ему редко нужны перемены и разнообразие. Пока все как всегда Бык счастлив.
-						</p>
-					</div>
+					<div class="wrapper-conten-block" ng-bind="article.text"></div>
 					<div class="footer-artile">
 						<h3><strong>Совместимость:</strong></h3>
 

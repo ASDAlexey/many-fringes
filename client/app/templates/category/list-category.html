@@ -1,7 +1,10 @@
 <article class="list-category">
   <div class="row">
     <div class="cell">
-      <h1 class="title"><a href="./" class="backward">Назад</a><span>Гороскопы</span></h1>
+      <h1 class="title">
+        <a href="./" class="backward">Назад</a>
+        <span>Гороскопы</span>
+      </h1>
 
       <div class="wrapper-content">
         <div class="wrapper-img" ng-if="linecategory.linecategoryImage.src">
@@ -11,53 +14,9 @@
         <div class="content-list-category" ng-bind="linecategory.text"></div>
       </div>
       <ul class="sub-category">
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/japane.jpg"></cube>
-          <a class="link-text" ui-sref="category({lineCategory:'horoscopes',category:'japanese_horoscope'})" hover>Японский гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/2.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Гороскоп друидов</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/3.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Цветочный гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/4.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Зороастрийский гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/5.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Греческий гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/6.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Мифический гороспоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/1.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Японский гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/2.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Горосклп друидов</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/3.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Цветочный гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/4.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Зороастрийский гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/5.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Греческий гороскоп</a>
-        </li>
-        <li>
-          <cube href-link="{{category.slug}}/horoscopes/japanese_horoscope" text="Перейти" front="cube/6.jpg"></cube>
-          <a class="link-text" ng-href="{{category.slug}}/japanese_horoscope" hover>Мифический гороспоп</a>
+        <li ng-repeat="category in linecategory.categories">
+          <cube href-link="{{getHref('japanese_horoscope')}}" text="Перейти" front="cube/japane.jpg"></cube>
+          <a class="link-text" ui-sref="{{sref({category:'japanese_horoscope'})}}" hover ng-bind="category.name"></a>
         </li>
       </ul>
       <div class="wrapper-popular">

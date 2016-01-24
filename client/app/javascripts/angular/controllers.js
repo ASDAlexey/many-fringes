@@ -165,59 +165,103 @@
         });
         return $scope.linecategories = Linecategory.find({
           filter: {
-            include: ["categories"]
+            include: [
+              {
+                relation: 'categories',
+                scope: {
+                  include: {
+                    relation: 'categoryImage'
+                  }
+                }
+              }, {
+                relation: 'linecategoryImage'
+              }
+            ]
           }
-        }, function(arr) {
-          return console.log(arr);
-        }, function(err) {
-          return console.log(err);
         });
       }
     ];
     controllers.lineCategoryCtrl = [
-      "$scope", "$location", "config", "$rootScope", "$stateParams", "Linecategory", "Article", function($scope, $location, config, $rootScope, $stateParams, Linecategory, Article) {
+      "$scope", "$location", "config", "$rootScope", "$stateParams", "Linecategory", "$state", function($scope, $location, config, $rootScope, $stateParams, Linecategory, $state) {
         $scope.absUrl = $location.absUrl();
         $scope.params = $stateParams;
-        console.log($scope.absUrl);
-        console.log($scope.params);
-        return $scope.linecategory = Linecategory.findOne({
+        $scope.$state = $state;
+        $scope.sref = function(stateObj) {
+          var obj;
+          obj = {};
+          obj[$state.current.name] = $stateParams[$state.current.name];
+          angular.extend(obj, stateObj);
+          return "category(" + (angular.toJson(obj)) + ")";
+        };
+        $scope.getHref = function(str) {
+          return "/" + $stateParams[$state.current.name] + "/" + str;
+        };
+        $scope.linecategory = Linecategory.findOne({
           filter: {
             where: {
               slug: $scope.params.lineCategory
             },
-            include: ["categories", "linecategoryImage"]
+            include: {
+              relation: 'categories',
+              scope: {
+                include: {
+                  relation: 'categoryImage'
+                }
+              }
+            }
           }
-        }, function(arr) {
-          return console.log(arr);
-        }, function(err) {
-          return console.log(err);
+        });
+        return $scope.linecategory.$promise.then(function(data) {
+          return console.log(data);
         });
       }
     ];
     controllers.categoryCtrl = [
-      "$scope", "$location", "config", "$rootScope", "$stateParams", "Article", function($scope, $location, config, $rootScope, $stateParams, Articles) {
+      "$scope", "$location", "config", "$rootScope", "$stateParams", "Category", function($scope, $location, config, $rootScope, $stateParams, Category) {
         $scope.absUrl = $location.absUrl();
-        return $scope.params = $stateParams;
+        $scope.params = $stateParams;
+        $scope.category = Category.findOne({
+          filter: {
+            where: {
+              slug: $scope.params.category
+            },
+            include: [
+              {
+                relation: 'articles',
+                scope: {
+                  include: {
+                    relation: 'articleImage'
+                  }
+                }
+              }, {
+                relation: 'categoryImage'
+              }
+            ]
+          }
+        });
+        return $scope.category.$promise.then(function(data) {
+          return console.log(data);
+        });
       }
     ];
-    controllers.articleCtrl = ["$scope", function($scope) {}];
-
-    /*  controllers.ArticleCtrl = [
-      "$scope"
-      "$location"
-      "config"
-      "$rootScope"
-      "$routeParams"
-      "Article"
-      ($scope,$location,config,$rootScope,$routeParams,Articles) ->
-        $scope.params = $routeParams;
-        console.log('ArtilceCtrl')
-     *      console.log($scope.params)
-     *          Articles.findOne("linecategories/#{$scope.params.lineCategory}/articles/").then (data) ->
-     *            $scope.category=_.findWhere(data, {slug: $scope.params.category})
-     *            console.log($scope.category)
-      ]
-     */
+    controllers.ArticleCtrl = [
+      "$scope", "$stateParams", "Article", function($scope, $stateParams, Article) {
+        $scope.params = $stateParams;
+        $scope.article = Article.findOne({
+          filter: {
+            where: {
+              slug: $stateParams.article
+            },
+            include: {
+              relation: 'articleImage'
+            }
+          }
+        });
+        return $scope.article.$promise.then(function(data) {
+          return console.log(data);
+        });
+      }
+    ];
     controllers.pageCtrl = [
       "$scope", "$location", "config", "$rootScope", function($scope, $location, config, $rootScope) {
         $scope.config = config;

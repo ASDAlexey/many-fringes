@@ -1,90 +1,44 @@
 <article class="list-category">
-	<div class="row">
-		<div class="cell">
-			<h1 class="title"><a href="horoscopes" class="backward">Назад</a><span>Японский гороскоп</span></h1>
+  <div class="row">
+    <div class="cell">
+      <h1 class="title">
+        <a ng-href="{{params.lineCategory}}"
+           class="backward">Назад
+        </a>
+        <span ng-bind="category.name"></span>
+      </h1>
 
-			<div class="wrapper-content">
-				<div class="wrapper-img">
-					<img src="app/images/cube/japane.jpg" alt="list-horoscopes-image"/>
-				</div>
-				<div class="content-list-category">
-					В многих странах и Японии был введен календарь, утверждающий, что под протекцией какого-нибудь животного в пределах двенадцати летнего отрезка времени
-					проходит каждый год. Многие заявляют, что год рождения человека воздействует на формирование его характерных особенностей. Исходя из этого, человек,
-					появившийся на свет в определенном году, получает некоторые природные свойства, обуславливающие его судьбу. Распространенность данного календаря на
-					Востоке
-					значительна.
-					Бытует точка зрения, что японский гороскоп переняли из Китая более, чем 10 столетий назад. Но кто-кто думает, что это учение разработала императрица
-					Суйко в
-					седьмом веке, однако эта концепция не пользуется столь большим признанием. Названия знаков в гороскопе японцы оставили прежними, но были изменены
-					описания
-					каждого знака, это дает возможность воспринимать японский гороскоп как уникальную систему описания черт человека, связанных с датой его появления, а
-					именно
-					годом рождения.
-				</div>
-			</div>
-			<ul class="sub-category">
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/bull" text="1925, 1937, 1949, 1961, 1973, 1985, 1997, 2009, 2021"
-						  front="horoscopes/japanese/bull.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/bull" hover>Бык</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/cockerel" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/cockerel.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/cockerel" hover>Петух</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/dog" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/dog.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/dog" hover>Собака</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/dragon" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/dragon.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/dragon" hover>Дракон</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/goat" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/goat.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/goat" hover>Коза</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/horse" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/horse.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/horse" hover>Лошадь</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/monkey" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/monkey.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/monkey" hover>Обезьяна</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/pig" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/pig.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/pig" hover>Кабан</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/rabbit" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/rabbit.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/rabbit" hover>Кролик</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/rat" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/rat.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/rat" hover>Крыса</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/snake" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/snake.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/snake" hover>Змея</a>
-				</li>
-				<li>
-					<cube href-link="{{category.slug}}/horoscopes/japanese_horoscope/tiger" text="1925, 1937, 1949, 1961, 1985, 1997, 2009, 2021" front="horoscopes/japanese/tiger.jpg"></cube>
-					<a class="link-text" ng-href="{{category.slug}}/japanese_horoscope/tiger" hover>Тигр</a>
-				</li>
-			</ul>
-			<div class="wrapper-popular">
-				<h2>Популярные статьи</h2>
-				<div class="popular">
-					<popular-slider url="headerSlider"
-									options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}'></popular-slider>
-				</div>
-			</div>
-		</div>
-		<aside class="cell aside">
-			<div class="advertising">
-				<strong>Здесь может быть <br>Ваша реклама</strong>
-			</div>
-		</aside>
-	</div>
+      <div class="wrapper-content">
+        <div class="wrapper-img">
+          <img ng-src="app/images/category-images/{{category.categoryImage.src}}"
+               ng-attr-alt="{{category.categoryImage.alt}}"/>
+        </div>
+        <div class="content-list-category" ng-bind="category.text"></div>
+      </div>
+      <ul class="sub-category">
+        <li ng-repeat="article in category.articles">
+          <cube href-link="{{params.lineCategory}}/{{category.slug}}/{{article.slug}}"
+                text="{{article.link_text}}"
+                front="{{article.articleImage.src}}"></cube>
+          <a class="link-text"
+             ng-href="{{params.lineCategory}}/{{category.slug}}/{{article.slug}}"
+             hover
+             ng-bind="article.name"></a>
+        </li>
+      </ul>
+      <div class="wrapper-popular">
+        <h2>Популярные статьи</h2>
+
+        <div class="popular">
+          <popular-slider url="headerSlider"
+                          options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}'></popular-slider>
+        </div>
+      </div>
+    </div>
+    <aside class="cell aside">
+      <div class="advertising">
+        <strong>Здесь может быть <br>Ваша реклама</strong>
+      </div>
+    </aside>
+  </div>
 </article>
