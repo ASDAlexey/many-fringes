@@ -1038,13 +1038,13 @@ define [
         },700);
   directives.bxslider = [
     "$timeout"
-    "dataService"
     "$compile"
-    ($timeout,dataService,$compile) ->
+    "Article"
+    ($timeout,$compile,Article) ->
       restrict : "E"
       scope : {
         options : "@"
-        url : "@"
+        categoryId : "@"
       }
       replace : true
       templateUrl : "app/templates/bxslider-tmpl.html"
@@ -1062,19 +1062,33 @@ define [
               <draw-svg width="80" height="80"
 									  elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]"></draw-svg>
               """
-        dataService.query({namePage : "#{scope.url}"},(data)->
-          scope.dataSlider = data
-          $timeout (->
-            scope.options = scope.$eval(scope.options)
-            scope.options.maxSlides = scope.getCountSlides()
-            scope.options.pagerCustom = '.bx-pager'
-            slider = $(element).bxSlider(scope.options)
+        Article.find({
+            filter : {
+              where : {
+                categoryId : scope.categoryId
+              },
+              limit : 10
+              include : {
+                relation : 'articleImage'
+              }
+            }
+          }
+        ,
+          (arr) ->
+            scope.dataSlider = arr
             $timeout (->
-              $('.header .bx-prev').html($compile(svgLeft)(scope))
-              $('.header .bx-next').html($compile(svgRight)(scope))
-            ),50
-          ),0
-        )
+              scope.options = scope.$eval(scope.options)
+              scope.options.maxSlides = scope.getCountSlides()
+              scope.options.pagerCustom = '.bx-pager'
+              slider = $(element).bxSlider(scope.options)
+              $timeout (->
+                $('.header .bx-prev').html($compile(svgLeft)(scope))
+                $('.header .bx-next').html($compile(svgRight)(scope))
+                $(element).parents('.also-articles-slider').addClass('loaded')
+              ),50
+            ),0
+          (err) ->
+            console.log(err))
         $(window).resize ->
           scope.options.maxSlides = scope.getCountSlides()
           slider.reloadSlider()
@@ -1085,18 +1099,22 @@ define [
   ]
   directives.popularSlider = [
     "$timeout"
-    "dataService"
     "$compile"
-    ($timeout,dataService,$compile) ->
+    "Article"
+    ($timeout,$compile,Article) ->
       restrict : "E"
       scope : {
         options : "@"
-        url : "@"
+        categoryId : "@"
       }
       replace : true
-      templateUrl : "app/templates/popularslider-tmpl.html"
+      templateUrl : "app/templates/bxslider-tmpl.html"
       link : (scope,element,attr) ->
         slider = ''
+        scope.getCountSlides = ->
+          widthSlider = $('.header').width() - $('.wrapper-logo').width() - 100
+          countSlides = parseInt(widthSlider / 260)
+          return countSlides
         svgLeft = """
               <draw-svg width="80" height="80"
                           elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowLeft',time: 800}]"></draw-svg>
@@ -1105,29 +1123,39 @@ define [
               <draw-svg width="80" height="80"
 									  elements="[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]"></draw-svg>
               """
-        scope.getCountSlides = ->
-          widthSlider = $('.list-category .row .cell:first-child').width() - 100
-          countSlides = parseInt(widthSlider / 260)
-          return countSlides
-        dataService.query({namePage : "#{scope.url}"},(data)->
-          scope.dataSlider = data
-          $timeout (->
-            scope.options = scope.$eval(scope.options)
-            scope.options.maxSlides = scope.getCountSlides()
-            scope.options.pagerCustom = '.bx-pager'
-            slider = $(element).bxSlider(scope.options)
+        Article.find({
+            filter : {
+              where : {
+                categoryId : scope.categoryId
+              },
+              limit : 10
+              include : {
+                relation : 'articleImage'
+              }
+            }
+          }
+        ,
+          (arr) ->
+            scope.dataSlider = arr
             $timeout (->
-              $('.wrapper-popular .bx-prev').html($compile(svgLeft)(scope))
-              $('.wrapper-popular .bx-next').html($compile(svgRight)(scope))
-            ),50
-          ),0
-        )
+              scope.options = scope.$eval(scope.options)
+              scope.options.maxSlides = scope.getCountSlides()
+              scope.options.pagerCustom = '.bx-pager'
+              slider = $(element).bxSlider(scope.options)
+              $timeout (->
+                $('.popular .bx-prev').html($compile(svgLeft)(scope))
+                $('.popular .bx-next').html($compile(svgRight)(scope))
+                $(element).parents('.popular').addClass('loaded')
+              ),50
+            ),0
+          (err) ->
+            console.log(err))
         $(window).resize ->
           scope.options.maxSlides = scope.getCountSlides()
           slider.reloadSlider()
           $timeout (->
-            $('.wrapper-popular .bx-prev').html($compile(svgLeft)(scope))
-            $('.wrapper-popular .bx-next').html($compile(svgRight)(scope))
+            $('.header .bx-prev').html($compile(svgLeft)(scope))
+            $('.header .bx-next').html($compile(svgRight)(scope))
           ),50
   ]
   #

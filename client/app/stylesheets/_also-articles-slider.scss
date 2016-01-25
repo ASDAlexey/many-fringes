@@ -1,6 +1,13 @@
 .also-articles-slider,.popular{
+  opacity:0;
 	width:calc(100% - 172px);
+  overflow: hidden;
+  height: 115px;
 	@include dibt();
+  @include transition();
+  &.loaded{
+    opacity:1;
+  }
 	.slider-articles{
 		@include dibt();
 		text-align:center;

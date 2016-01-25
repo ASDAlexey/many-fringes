@@ -288,7 +288,7 @@ define [
     "$stateParams"
     "Article"
     ($scope,$stateParams,Article) ->
-      $scope.params=$stateParams;
+      $scope.params = $stateParams;
       $scope.article = Article.findOne({
           filter : {
             where : {
@@ -374,17 +374,6 @@ define [
     "$location"
     ($scope,$timeout,$rootScope,$location) ->
       $scope.absUrl = $location.absUrl()
-      #      $rootScope.timer = new Date()
-      #      $scope.$on('$viewContentLoaded',->
-      #        t = new Date() - $rootScope.timer
-      #        console.log('View loaded: ' + t)
-      #      )
-      #      $scope.$on('$nodesDOMRendered',(e)->
-      #        console.log('$nodesDOMRendered')
-      #        t = new Date() - $rootScope.timer
-      #        console.log('View rendered: ' + t)
-      #      )
-
       $scope.scrollClick = 0
       $scope.scrollToElement = (element,offset,duration)->
         $scope.scrollClick++
@@ -393,45 +382,6 @@ define [
           offset : offset
           duration : duration
         }
-      #Отмена изменения пути в AngularJS
-      $rootScope.routLoad = false
-#      routeChange = (event,newUrl)->
-#        event.preventDefault()
-#        console.log('start')
-#        $('.preloader').removeClass('hideAnimation').removeClass('hidden')
-##        $rootScope.$off('$locationChangeStart',routeChange)
-##        onRouteChangeOff()
-#        $timeout (->
-#          console.log(newUrl)
-#          $location.path(newUrl)
-#          $rootScope.routLoad=true
-#        ),800
-#      $rootScope.$on('$locationChangeStart',routeChange)
-#      $rootScope.$on "$routeChangeStart",(event, next, current)->
-#        $timeout (->
-#          console.log(onRouteChangeOff())
-#        ),900
-#      $rootScope.$on '$locationChangeSuccess',->
-#        $timeout (->
-#          if $rootScope.routLoad
-#            console.log('success')
-#            $rootScope.routLoad=false
-##            $rootScope.$on('$locationChangeStart',routeChange)
-#            return
-#        ),900
-##        $rootScope.$on('$locationChangeStart',routeChange)
-#      onRouteChange=$rootScope.$on '$locationChangeStart',(e,newUrl) ->
-#        e.preventDefault()
-#        onRouteChange()
-#        $timeout (->
-#          $location.path(newUrl)
-#        ),1000
-#        console.log($location.search())
-#        $location.path($location.search().goto)
-##        return
-#        $('.preloader').removeClass('hideAnimation').removeClass('hidden')
-#        next = parseRoute().$$route
-#        console.log(next)
   ]
   controllers.currencylangCtrl = [
     "$scope"

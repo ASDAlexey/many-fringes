@@ -16,8 +16,8 @@ html(ng-app)
         header.header
           a.wrapper-logo(href='/')
             img(src="app/images/logo.png", alt='logo', title='logo')
-          //.also-articles-slider
-          //  bxslider(url='headerSlider', options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}')
+          .also-articles-slider
+            bxslider(category-id='' options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}')
           .authentication-block
             ul.nav.nav-pills.pull-right
               li(ng-show='!user.id')

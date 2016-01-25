@@ -1352,9 +1352,15 @@ body {
   margin-top: -2px; }
 
 .also-articles-slider, .popular {
+  opacity: 0;
   width: calc(100% - 172px);
+  overflow: hidden;
+  height: 115px;
   display: inline-block;
-  vertical-align: top; }
+  vertical-align: top;
+  transition: all 0.5s; }
+  .also-articles-slider.loaded, .popular.loaded {
+    opacity: 1; }
   .also-articles-slider .slider-articles, .popular .slider-articles {
     display: inline-block;
     vertical-align: top;

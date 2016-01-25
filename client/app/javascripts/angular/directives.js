@@ -1132,12 +1132,12 @@
       };
     };
     directives.bxslider = [
-      "$timeout", "dataService", "$compile", function($timeout, dataService, $compile) {
+      "$timeout", "$compile", "Article", function($timeout, $compile, Article) {
         return {
           restrict: "E",
           scope: {
             options: "@",
-            url: "@"
+            categoryId: "@"
           },
           replace: true,
           templateUrl: "app/templates/bxslider-tmpl.html",
@@ -1152,10 +1152,18 @@
             };
             svgLeft = "<draw-svg width=\"80\" height=\"80\"\n            elements=\"[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowLeft',time: 800}]\"></draw-svg>";
             svgRight = "              <draw-svg width=\"80\" height=\"80\"\nelements=\"[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]\"></draw-svg>";
-            dataService.query({
-              namePage: "" + scope.url
-            }, function(data) {
-              scope.dataSlider = data;
+            Article.find({
+              filter: {
+                where: {
+                  categoryId: scope.categoryId
+                },
+                limit: 10,
+                include: {
+                  relation: 'articleImage'
+                }
+              }
+            }, function(arr) {
+              scope.dataSlider = arr;
               return $timeout((function() {
                 scope.options = scope.$eval(scope.options);
                 scope.options.maxSlides = scope.getCountSlides();
@@ -1163,9 +1171,12 @@
                 slider = $(element).bxSlider(scope.options);
                 return $timeout((function() {
                   $('.header .bx-prev').html($compile(svgLeft)(scope));
-                  return $('.header .bx-next').html($compile(svgRight)(scope));
+                  $('.header .bx-next').html($compile(svgRight)(scope));
+                  return $(element).parents('.also-articles-slider').addClass('loaded');
                 }), 50);
               }), 0);
+            }, function(err) {
+              return console.log(err);
             });
             return $(window).resize(function() {
               scope.options.maxSlides = scope.getCountSlides();
@@ -1180,47 +1191,58 @@
       }
     ];
     directives.popularSlider = [
-      "$timeout", "dataService", "$compile", function($timeout, dataService, $compile) {
+      "$timeout", "$compile", "Article", function($timeout, $compile, Article) {
         return {
           restrict: "E",
           scope: {
             options: "@",
-            url: "@"
+            categoryId: "@"
           },
           replace: true,
-          templateUrl: "app/templates/popularslider-tmpl.html",
+          templateUrl: "app/templates/bxslider-tmpl.html",
           link: function(scope, element, attr) {
             var slider, svgLeft, svgRight;
             slider = '';
-            svgLeft = "<draw-svg width=\"80\" height=\"80\"\n            elements=\"[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowLeft',time: 800}]\"></draw-svg>";
-            svgRight = "              <draw-svg width=\"80\" height=\"80\"\nelements=\"[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]\"></draw-svg>";
             scope.getCountSlides = function() {
               var countSlides, widthSlider;
-              widthSlider = $('.list-category .row .cell:first-child').width() - 100;
+              widthSlider = $('.header').width() - $('.wrapper-logo').width() - 100;
               countSlides = parseInt(widthSlider / 260);
               return countSlides;
             };
-            dataService.query({
-              namePage: "" + scope.url
-            }, function(data) {
-              scope.dataSlider = data;
+            svgLeft = "<draw-svg width=\"80\" height=\"80\"\n            elements=\"[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowLeft',time: 800}]\"></draw-svg>";
+            svgRight = "              <draw-svg width=\"80\" height=\"80\"\nelements=\"[{attr: {fill: 'none','fill-opacity':0,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: '#ff5a00','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'circle',property: {cx: 40,cy: 40,r: 38},time: 800}, {attr: {fill: '#ff5a00','fill-opacity': .7,stroke: '#ff5a00','stroke-opacity': 1,strokeWidth: 2},attrHover: {fill: 'green','fill-opacity': 0.7,stroke: '#fff','stroke-opacity': 1,strokeWidth: 2},el: 'arrowRight',time: 800}]\"></draw-svg>";
+            Article.find({
+              filter: {
+                where: {
+                  categoryId: scope.categoryId
+                },
+                limit: 10,
+                include: {
+                  relation: 'articleImage'
+                }
+              }
+            }, function(arr) {
+              scope.dataSlider = arr;
               return $timeout((function() {
                 scope.options = scope.$eval(scope.options);
                 scope.options.maxSlides = scope.getCountSlides();
                 scope.options.pagerCustom = '.bx-pager';
                 slider = $(element).bxSlider(scope.options);
                 return $timeout((function() {
-                  $('.wrapper-popular .bx-prev').html($compile(svgLeft)(scope));
-                  return $('.wrapper-popular .bx-next').html($compile(svgRight)(scope));
+                  $('.popular .bx-prev').html($compile(svgLeft)(scope));
+                  $('.popular .bx-next').html($compile(svgRight)(scope));
+                  return $(element).parents('.popular').addClass('loaded');
                 }), 50);
               }), 0);
+            }, function(err) {
+              return console.log(err);
             });
             return $(window).resize(function() {
               scope.options.maxSlides = scope.getCountSlides();
               slider.reloadSlider();
               return $timeout((function() {
-                $('.wrapper-popular .bx-prev').html($compile(svgLeft)(scope));
-                return $('.wrapper-popular .bx-next').html($compile(svgRight)(scope));
+                $('.header .bx-prev').html($compile(svgLeft)(scope));
+                return $('.header .bx-next').html($compile(svgRight)(scope));
               }), 50);
             });
           }

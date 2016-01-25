@@ -332,7 +332,7 @@
       "$scope", "$timeout", "$rootScope", "$location", function($scope, $timeout, $rootScope, $location) {
         $scope.absUrl = $location.absUrl();
         $scope.scrollClick = 0;
-        $scope.scrollToElement = function(element, offset, duration) {
+        return $scope.scrollToElement = function(element, offset, duration) {
           $scope.scrollClick++;
           return $scope.scrollProperty = {
             element: element,
@@ -340,7 +340,6 @@
             duration: duration
           };
         };
-        return $rootScope.routLoad = false;
       }
     ];
     controllers.currencylangCtrl = [
