@@ -1825,18 +1825,18 @@ body, html {
     line-height: 1;
     font-weight: 400;
     font-size: 17px; }
+    .list-category .footer-artile p:first-child strong {
+      color: #ff5a00; }
+    .list-category .footer-artile p:nth-child(2) strong {
+      color: #00f; }
+    .list-category .footer-artile p:nth-child(3) strong {
+      color: #f00; }
     .list-category .footer-artile p strong {
       font-family: 'alexandra_scriptregular', Tahoma, sans-serif;
       line-height: 1;
       font-weight: 400;
       font-size: 40px;
       color: #ff5a00; }
-      .list-category .footer-artile p strong.perfect {
-        color: #008000; }
-      .list-category .footer-artile p strong.good {
-        color: #00f; }
-      .list-category .footer-artile p strong.no-good {
-        color: #f00; }
   .list-category .title {
     padding: 7px 0;
     text-align: center;

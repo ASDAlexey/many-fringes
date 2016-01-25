@@ -48,7 +48,8 @@ define [
       })
       .state('article',{
         url : "/:lineCategory/:category/:article",
-        templateUrl : "#{config.frontendTemplatesPath}/category/article.html"
+        templateUrl: ($stateParams)->
+          "#{config.frontendTemplatesPath}/article/article-#{$stateParams.lineCategory}.html";
         controller : "ArticleCtrl"
       });
       $locationProvider.html5Mode({

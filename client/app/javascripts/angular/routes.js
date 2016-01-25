@@ -40,7 +40,9 @@
           controller: "categoryCtrl"
         }).state('article', {
           url: "/:lineCategory/:category/:article",
-          templateUrl: config.frontendTemplatesPath + "/category/article.html",
+          templateUrl: function($stateParams) {
+            return config.frontendTemplatesPath + "/article/article-" + $stateParams.lineCategory + ".html";
+          },
           controller: "ArticleCtrl"
         });
         $locationProvider.html5Mode({

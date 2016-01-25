@@ -1,0 +1,39 @@
+<article class="list-category">
+  <div class="row">
+    <div class="cell">
+      <h1 class="title">
+        <a ng-href="{{params.lineCategory}}/{{params.category}}" class="backward">Назад</a>
+        <span ng-bind="article.name"></span>
+      </h1>
+
+      <div class="wrapper-content">
+        <div class="wrapper-img">
+          <img src="app/images/article-images/{{article.articleImage.src}}" ng-attr-alt="{{article.articleImage.alt}}"/>
+        </div>
+        <div class="content-list-category">
+          <div class="wrapper-date">
+            <h2><strong>Годы рождения:</strong></h2>
+            <time class="time"
+                  ng-attr-datetime="{{article.link_text}}">..., {{article.link_text}}...
+            </time>
+          </div>
+          <div class="wrapper-conten-block" ng-bind="article.text"></div>
+          <div class="footer-artile" ng-bind-html="article.text_extension"></div>
+        </div>
+      </div>
+      <div class="wrapper-popular">
+        <h2>Популярные статьи</h2>
+
+        <div class="popular">
+          <popular-slider url="headerSlider"
+                          options='{adaptiveHeight: true,speed: 700,easing: "ease-in-out",touchEnabled: true,controls: true,pager: true,startSlide: 0,useCSS: true,slideWidth: 260, minSlides: 1,maxSlides: 3,moveSlides: 1}'></popular-slider>
+        </div>
+      </div>
+    </div>
+    <aside class="cell aside">
+      <div class="advertising">
+        <strong>Здесь может быть <br>Ваша реклама</strong>
+      </div>
+    </aside>
+  </div>
+</article>

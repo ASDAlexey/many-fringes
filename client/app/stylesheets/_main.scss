@@ -361,18 +361,24 @@ body, html{
     p{
       color:#000;
       @include osr(17px);
+      &:first-child{
+        strong{
+          color:#ff5a00;
+        }
+      }
+      &:nth-child(2){
+        strong{
+          color:#00f;
+        }
+      }
+      &:nth-child(3){
+        strong{
+          color:#f00;
+        }
+      }
       strong{
         @include ar(40px);
         color:#ff5a00;
-        &.perfect{
-          color:#008000;
-        }
-        &.good{
-          color:#00f;
-        }
-        &.no-good{
-          color:#f00;
-        }
       }
     }
   }

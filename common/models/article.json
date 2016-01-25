@@ -28,6 +28,9 @@
     "text": {
       "type": "string"
     },
+    "text_extension": {
+      "type": "string"
+    },
     "created_at": {
       "type": "number"
     },
