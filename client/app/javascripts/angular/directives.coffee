@@ -1399,5 +1399,19 @@ define [
         angular.element(element).on "mouseleave",->
           drawBlur(BLUR_RADIUS)
   ]
+  directives.addHeight = [
+    "$timeout"
+    "$window"
+    ($timeout,$window) ->
+      restrict : "A"
+      link : (scope,element,attr)->
+        $timeout(()->
+          wh=$($window).height()
+          $(element).height(wh - 280)
+        ,0)
+        $(window).resize ()->
+          wh = $($window).height()
+          $(element).height(wh - 280)
+  ]
   directive.directive(directives)
   directive

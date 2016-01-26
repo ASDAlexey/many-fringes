@@ -1500,6 +1500,25 @@
         };
       }
     ];
+    directives.addHeight = [
+      "$timeout", "$window", function($timeout, $window) {
+        return {
+          restrict: "A",
+          link: function(scope, element, attr) {
+            $timeout(function() {
+              var wh;
+              wh = $($window).height();
+              return $(element).height(wh - 280);
+            }, 0);
+            return $(window).resize(function() {
+              var wh;
+              wh = $($window).height();
+              return $(element).height(wh - 280);
+            });
+          }
+        };
+      }
+    ];
     directive.directive(directives);
     return directive;
   });

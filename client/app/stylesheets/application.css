@@ -1796,28 +1796,25 @@ body, html {
   display: table;
   width: 100%;
   margin: 0 0 0 12px; }
-  .list-category .row {
-    display: table-row;
-    width: 100%; }
-    .list-category .row .aside {
-      background-color: #fff;
-      border-left: 1px solid #ccc;
-      width: 250px; }
-      .list-category .row .aside .advertising {
-        display: table-cell;
-        width: 250px;
-        text-align: center;
-        vertical-align: middle;
-        background-color: #ff5a00;
-        color: #fff;
-        font-family: 'alexandra_scriptregular', Tahoma, sans-serif;
-        line-height: 1;
-        font-weight: 400;
-        font-size: 40px;
-        height: 200px; }
-    .list-category .row .cell {
+  .list-category .row .aside {
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    width: 250px; }
+    .list-category .row .aside .advertising {
       display: table-cell;
-      vertical-align: top; }
+      width: 250px;
+      text-align: center;
+      vertical-align: middle;
+      background-color: #ff5a00;
+      color: #fff;
+      font-family: 'alexandra_scriptregular', Tahoma, sans-serif;
+      line-height: 1;
+      font-weight: 400;
+      font-size: 40px;
+      height: 200px; }
+  .list-category .row .cell {
+    display: table-cell;
+    vertical-align: top; }
   .list-category .footer-artile h3 {
     margin-top: 7px;
     font-family: 'alexandra_scriptregular', Tahoma, sans-serif;
