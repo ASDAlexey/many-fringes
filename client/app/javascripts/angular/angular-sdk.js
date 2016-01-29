@@ -3056,6 +3056,12 @@ module.factory(
           url: urlBase + "/Linecategories/change-stream",
           method: "POST"
         },
+
+        // INTERNAL. Use Category.linecategory() instead.
+        "::get::Category::linecategory": {
+          url: urlBase + "/Categories/:id/linecategory",
+          method: "GET"
+        },
       }
     );
 
@@ -3723,6 +3729,12 @@ module.factory(
       { 'id': '@id' },
       {
 
+        // INTERNAL. Use Category.linecategory() instead.
+        "prototype$__get__linecategory": {
+          url: urlBase + "/Categories/:id/linecategory",
+          method: "GET"
+        },
+
         // INTERNAL. Use Category.articles.findById() instead.
         "prototype$__findById__articles": {
           params: {
@@ -4279,6 +4291,12 @@ module.factory(
           url: urlBase + "/Linecategories/:id/categories/count",
           method: "GET"
         },
+
+        // INTERNAL. Use Article.category() instead.
+        "::get::Article::category": {
+          url: urlBase + "/Articles/:id/category",
+          method: "GET"
+        },
       }
     );
 
@@ -4421,6 +4439,42 @@ module.factory(
     */
     R.modelName = "Category";
 
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Category#linecategory
+         * @methodOf lbServices.Category
+         *
+         * @description
+         *
+         * Fetches belongsTo relation linecategory.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Linecategory` object.)
+         * </em>
+         */
+        R.linecategory = function() {
+          var TargetResource = $injector.get("Linecategory");
+          var action = TargetResource["::get::Category::linecategory"];
+          return action.apply(R, arguments);
+        };
     /**
      * @ngdoc object
      * @name lbServices.Category.articles
@@ -4945,6 +4999,12 @@ module.factory(
       urlBase + "/Articles/:id",
       { 'id': '@id' },
       {
+
+        // INTERNAL. Use Article.category() instead.
+        "prototype$__get__category": {
+          url: urlBase + "/Articles/:id/category",
+          method: "GET"
+        },
 
         // INTERNAL. Use Article.articleImage() instead.
         "prototype$__get__articleImage": {
@@ -5592,6 +5652,42 @@ module.factory(
     */
     R.modelName = "Article";
 
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Article#category
+         * @methodOf lbServices.Article
+         *
+         * @description
+         *
+         * Fetches belongsTo relation category.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Category` object.)
+         * </em>
+         */
+        R.category = function() {
+          var TargetResource = $injector.get("Category");
+          var action = TargetResource["::get::Article::category"];
+          return action.apply(R, arguments);
+        };
     /**
      * @ngdoc object
      * @name lbServices.Article.articleImage

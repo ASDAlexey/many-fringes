@@ -46,6 +46,10 @@
     "articleImage": {
       "type": "hasOne",
       "model": "ArticleImage"
+    },
+    "category": {
+      "type": "belongsTo",
+      "model": "Category"
     }
   },
   "acls": [],

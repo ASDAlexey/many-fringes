@@ -1132,7 +1132,7 @@
       };
     };
     directives.bxslider = [
-      "$timeout", "$compile", "Article", function($timeout, $compile, Article) {
+      "$timeout", "$compile", "Article", "Category", function($timeout, $compile, Article, Category) {
         return {
           restrict: "E",
           scope: {
@@ -1143,6 +1143,7 @@
           templateUrl: "app/templates/bxslider-tmpl.html",
           link: function(scope, element, attr) {
             var slider, svgLeft, svgRight;
+            scope.getHref = function(slug) {};
             slider = '';
             scope.getCountSlides = function() {
               var countSlides, widthSlider;
@@ -1164,6 +1165,36 @@
               }
             }, function(arr) {
               scope.dataSlider = arr;
+              console.log(scope.dataSlider);
+
+              /*
+                Client.prototype$__create__groups({
+              id: clientAccessManager.getMerchantId(oUser)
+                        },
+                        oDataForm,
+                        function(oData){
+              $state.go('group.list');
+                        }, function(oError){
+              $scope.oErrors = errorParser.parseValidationError(oError, sBlockForm, $scope.aMessages);
+                        }
+                      ).$promise.finally(function() {
+                        $scope.isLoading = false
+                      })
+               */
+              Article.prototype$__get__category({
+                id: 2
+              }, function(data) {
+                console.log(data);
+                return Category.prototype$__get__linecategory({
+                  id: data.id
+                }, function(data) {
+                  return console.log(data);
+                }, function(err) {
+                  return console.log(err);
+                });
+              }, function(err) {
+                return console.log(err);
+              });
               return $timeout((function() {
                 scope.options = scope.$eval(scope.options);
                 scope.options.maxSlides = scope.getCountSlides();

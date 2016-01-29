@@ -1,6 +1,7 @@
 ### lbServices ###
 cd client/
 lb-ng ../server/server.js app/javascripts/angular/angular-sdk.js
+lb-ng-doc client/app/javascripts/angular/angular-sdk.js
 ### Contributing ###
 
 Thank you for your interest in `loopback-example-access-control`, an open source project

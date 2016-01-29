@@ -44,6 +44,10 @@
     "articles": {
       "type": "hasMany",
       "model": "Article"
+    },
+    "linecategory": {
+      "type": "belongsTo",
+      "model": "Linecategory"
     }
   },
   "acls": [],

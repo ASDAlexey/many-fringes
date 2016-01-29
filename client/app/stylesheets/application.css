@@ -1385,7 +1385,7 @@ body {
           font-size: 0;
           visibility: hidden; }
         .also-articles-slider .slider-articles > li > div .wrapper-img, .popular .slider-articles > li > div .wrapper-img {
-          margin: 5px 4px -5px 0;
+          margin: 2px 7px -5px 0;
           float: left;
           width: 100px;
           position: relative;
@@ -1394,7 +1394,7 @@ body {
           .also-articles-slider .slider-articles > li > div .wrapper-img img, .popular .slider-articles > li > div .wrapper-img img {
             max-width: 100px; }
         .also-articles-slider .slider-articles > li > div > p, .popular .slider-articles > li > div > p {
-          text-align: justify;
+          text-align: left;
           color: #fff;
           font-family: 'OpenSansCondensedLight', Tahoma, sans-serif;
           line-height: 1.25;

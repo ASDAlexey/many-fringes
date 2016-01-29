@@ -1,19 +1,13 @@
 <ul class="slider-articles">
-	<li ng-repeat="itemSlider in dataSlider">
-		<div>
-			<a href="" class="wrapper-img">
-				<img src="app/images/cube/1.jpg" alt="popula-articles-slider" title="popula-articles-slider"/>
-			</a>
-
-			<p>
-				{{$index}}
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolores eligendi, incidunt itaque suscipit velit? Lorem ipsum dolor sit amet,
-				consectetur
-				adipisicing elit. Dolore dolores eligendi, incidunt itaque suscipit velit? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolores
-				eligendi,
-				incidunt itaque suscipit velit?
-			</p>
-		</div>
-		<div class="wrapper-link"><a href="">читать далее</a></div>
-	</li>
+  <li ng-repeat="itemSlider in dataSlider">
+    <div>
+      <a ng-href="{{getHref(itemSlider.slug)}}" class="wrapper-img">
+        <img ng-src="app/images/article-images/{{itemSlider.articleImage.src}}"
+             ng-attr-alt="{{itemSlider.articleImage.alt}}"
+             ng-attr-title="{{itemSlider.articleImage.alt}}"/>
+      </a>
+      <p>{{ itemSlider.text | limitTo: 115 }}{{itemSlider.text.length > 115 ? '...' : ''}}</p>
+    </div>
+    <div class="wrapper-link"><a ng-href="{{getHref(itemSlider.slug)}}">читать далее</a></div>
+  </li>
 </ul>
