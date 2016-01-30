@@ -8,7 +8,7 @@
     "port": 3306,
     "database": "many-fringes",
     "username": "root",
-    "password": "",
+    "password": "121314",
     "name": "relationalDB",
     "connector": "mysql",
     "createDatabase": true,

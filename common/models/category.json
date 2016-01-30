@@ -32,6 +32,13 @@
       "type": "number"
     },
     "text": {
+      "type": "string",
+      "mysql": {
+        "dataType": "TEXT",
+        "dataLength": 21844
+      }
+    },
+    "path": {
       "type": "string"
     }
   },

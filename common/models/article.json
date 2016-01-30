@@ -26,7 +26,11 @@
       "type": "string"
     },
     "text": {
-      "type": "string"
+      "type": "string",
+      "mysql": {
+        "dataType": "TEXT",
+        "dataLength": 21844
+      }
     },
     "text_extension": {
       "type": "string"
@@ -38,6 +42,9 @@
       "type": "number"
     },
     "link_text": {
+      "type": "string"
+    },
+    "path": {
       "type": "string"
     }
   },

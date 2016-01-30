@@ -1181,20 +1181,22 @@
                         $scope.isLoading = false
                       })
                */
-              Article.prototype$__get__category({
-                id: 2
-              }, function(data) {
-                console.log(data);
-                return Category.prototype$__get__linecategory({
-                  id: data.id
-                }, function(data) {
-                  return console.log(data);
-                }, function(err) {
-                  return console.log(err);
-                });
-              }, function(err) {
-                return console.log(err);
-              });
+
+              /*Article.prototype$__get__category({
+                id : 2
+              },(data)->
+                  console.log(data)#category
+                  Category.prototype$__get__linecategory({
+                    id:data.id
+                  },(data)->
+                      console.log(data);#linecategory
+                    (err)->
+                      console.log(err)
+                  )
+                (err)->
+                  console.log(err)
+              )
+               */
               return $timeout((function() {
                 scope.options = scope.$eval(scope.options);
                 scope.options.maxSlides = scope.getCountSlides();

@@ -1096,7 +1096,7 @@ define [
         })
 ###
             #articleId=2
-            Article.prototype$__get__category({
+            ###Article.prototype$__get__category({
               id : 2
             },(data)->
                 console.log(data)#category
@@ -1109,7 +1109,7 @@ define [
                 )
               (err)->
                 console.log(err)
-            )
+            )###
 
             $timeout (->
               scope.options = scope.$eval(scope.options)
