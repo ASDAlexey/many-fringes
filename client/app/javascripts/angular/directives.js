@@ -1143,7 +1143,9 @@
           templateUrl: "app/templates/bxslider-tmpl.html",
           link: function(scope, element, attr) {
             var slider, svgLeft, svgRight;
-            scope.getHref = function(slug) {};
+            scope.getHref = function(path, slug) {
+              return path + '/' + slug;
+            };
             slider = '';
             scope.getCountSlides = function() {
               var countSlides, widthSlider;
@@ -1166,37 +1168,6 @@
             }, function(arr) {
               scope.dataSlider = arr;
               console.log(scope.dataSlider);
-
-              /*
-                Client.prototype$__create__groups({
-              id: clientAccessManager.getMerchantId(oUser)
-                        },
-                        oDataForm,
-                        function(oData){
-              $state.go('group.list');
-                        }, function(oError){
-              $scope.oErrors = errorParser.parseValidationError(oError, sBlockForm, $scope.aMessages);
-                        }
-                      ).$promise.finally(function() {
-                        $scope.isLoading = false
-                      })
-               */
-
-              /*Article.prototype$__get__category({
-                id : 2
-              },(data)->
-                  console.log(data)#category
-                  Category.prototype$__get__linecategory({
-                    id:data.id
-                  },(data)->
-                      console.log(data);#linecategory
-                    (err)->
-                      console.log(err)
-                  )
-                (err)->
-                  console.log(err)
-              )
-               */
               return $timeout((function() {
                 scope.options = scope.$eval(scope.options);
                 scope.options.maxSlides = scope.getCountSlides();
@@ -1235,6 +1206,9 @@
           templateUrl: "app/templates/bxslider-tmpl.html",
           link: function(scope, element, attr) {
             var slider, svgLeft, svgRight;
+            scope.getHref = function(path, slug) {
+              return path + '/' + slug;
+            };
             slider = '';
             scope.getCountSlides = function() {
               var countSlides, widthSlider;

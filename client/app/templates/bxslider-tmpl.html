@@ -1,13 +1,13 @@
 <ul class="slider-articles">
   <li ng-repeat="itemSlider in dataSlider">
     <div>
-      <a ng-href="{{getHref(itemSlider.slug)}}" class="wrapper-img">
+      <a ng-href="{{getHref(itemSlider.path,itemSlider.slug)}}" class="wrapper-img">
         <img ng-src="app/images/article-images/{{itemSlider.articleImage.src}}"
              ng-attr-alt="{{itemSlider.articleImage.alt}}"
              ng-attr-title="{{itemSlider.articleImage.alt}}"/>
       </a>
       <p>{{ itemSlider.text | limitTo: 115 }}{{itemSlider.text.length > 115 ? '...' : ''}}</p>
     </div>
-    <div class="wrapper-link"><a ng-href="{{getHref(itemSlider.slug)}}">читать далее</a></div>
+    <div class="wrapper-link"><a ng-href="{{getHref(itemSlider.path,itemSlider.slug)}}">читать далее</a></div>
   </li>
 </ul>

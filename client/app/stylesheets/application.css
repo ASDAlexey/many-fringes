@@ -1392,7 +1392,9 @@ body {
           z-index: 0;
           overflow: hidden; }
           .also-articles-slider .slider-articles > li > div .wrapper-img img, .popular .slider-articles > li > div .wrapper-img img {
-            max-width: 100px; }
+            max-width: 100px;
+            max-height: 82px;
+            margin: 0 auto; }
         .also-articles-slider .slider-articles > li > div > p, .popular .slider-articles > li > div > p {
           text-align: left;
           color: #fff;

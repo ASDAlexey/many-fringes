@@ -1051,8 +1051,8 @@ define [
       templateUrl : "app/templates/bxslider-tmpl.html"
       link : (scope,element,attr) ->
         #get path by slug
-        scope.getHref=(slug)->
-#          console.log(slug);
+        scope.getHref=(path,slug)->
+          return path+'/'+slug
         slider = ''
         scope.getCountSlides = ->
           widthSlider = $('.header').width() - $('.wrapper-logo').width() - 100
@@ -1080,37 +1080,7 @@ define [
         ,
           (arr) ->
             scope.dataSlider = arr
-            console.log(scope.dataSlider)
-            ###
-  Client.prototype$__create__groups({
-            id: clientAccessManager.getMerchantId(oUser)
-          },
-          oDataForm,
-          function(oData){
-            $state.go('group.list');
-          }, function(oError){
-            $scope.oErrors = errorParser.parseValidationError(oError, sBlockForm, $scope.aMessages);
-          }
-        ).$promise.finally(function() {
-          $scope.isLoading = false
-        })
-###
-            #articleId=2
-            ###Article.prototype$__get__category({
-              id : 2
-            },(data)->
-                console.log(data)#category
-                Category.prototype$__get__linecategory({
-                  id:data.id
-                },(data)->
-                    console.log(data);#linecategory
-                  (err)->
-                    console.log(err)
-                )
-              (err)->
-                console.log(err)
-            )###
-
+            console.log scope.dataSlider
             $timeout (->
               scope.options = scope.$eval(scope.options)
               scope.options.maxSlides = scope.getCountSlides()
@@ -1145,6 +1115,8 @@ define [
       replace : true
       templateUrl : "app/templates/bxslider-tmpl.html"
       link : (scope,element,attr) ->
+        scope.getHref=(path,slug)->
+          return path+'/'+slug
         slider = ''
         scope.getCountSlides = ->
           widthSlider = $('.header').width() - $('.wrapper-logo').width() - 100
