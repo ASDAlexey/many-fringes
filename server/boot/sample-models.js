@@ -26,30 +26,28 @@ module.exports=function(app){
       });
     });
   });
-
-  app.dataSources.relationalDB.automigrate('Linecategory',function(err){
+ /* app.dataSources.relationalDB.automigrate('Linecategory',function(err){
     if(err) throw err;
     app.models.Linecategory.create(linecategoryFixtures,function(err,models){
       if(err) throw err;
       //console.log('Models created: \n',models);
     });
-  });
-  app.dataSources.relationalDB.automigrate('Category',function(err){
+  });*/
+  /*app.dataSources.relationalDB.autoupdate('Category',function(err){
     if(err) throw err;
     app.models.Category.create(categoryFixtures,function(err,models){
       if(err) throw err;
       //console.log('Models created: \n',models);
     });
-  });
-  app.dataSources.relationalDB.automigrate('Article',function(err){
+  });*/
+  /*app.dataSources.relationalDB.autoupdate('Article',function(err){
     if(err) throw err;
     app.models.Article.create(articleFixtures,function(err,models){
       if(err) throw err;
       //console.log('Models created: \n',models);
     });
-  });
-
-  app.dataSources.relationalDB.automigrate('LinecategoryImage',function(err){
+  });*/
+  /*app.dataSources.relationalDB.autoupdate('LinecategoryImage',function(err){
     if(err) throw err;
     app.models.LinecategoryImage.create([{
       "src":"zodiac.jpg",
@@ -63,8 +61,23 @@ module.exports=function(app){
       if(err) throw err;
       //console.log('Models created: \n',models);
     });
-  });
-  app.dataSources.relationalDB.automigrate('CategoryImage',function(err){
+  });*/
+  /*app.dataSources.relationalDB.automigrate('LinecategoryImage',function(err){
+    if(err) throw err;
+    app.models.LinecategoryImage.create([{
+      "src":"zodiac.jpg",
+      "alt":"horoscopes",
+      "width":null,
+      "height":null,
+      "created_at":0,
+      "updated_at":0,
+      "linecategoryId":1
+    }],function(err,models){
+      if(err) throw err;
+      //console.log('Models created: \n',models);
+    });
+  });*/
+  /*app.dataSources.relationalDB.autoupdate('CategoryImage',function(err){
     if(err) throw err;
     app.models.CategoryImage.create([{
       "src":"zodiac.jpg",
@@ -78,12 +91,12 @@ module.exports=function(app){
       if(err) throw err;
       //console.log('Models created: \n',models);
     });
-  });
-  app.dataSources.relationalDB.automigrate('ArticleImage',function(err){
+  });*/
+  /*app.dataSources.relationalDB.autoupdate('ArticleImage',function(err){
     if(err) throw err;
     app.models.ArticleImage.create(acticleImageFixtures,function(err,models){
       if(err) throw err;
       //console.log('Models created: \n',models);
     });
-  });
+  });*/
 };
