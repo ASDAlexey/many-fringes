@@ -161,7 +161,7 @@
           }
         ];
         $scope.fullPathCategoryImages = _.each($scope.categoryImages, function(value) {
-          return value.src = 'app/images/categories_images/' + value.src;
+          return value.src = 'app/images/category-images/' + value.src;
         });
         $scope.linecategories = Linecategory.find({
           filter: {

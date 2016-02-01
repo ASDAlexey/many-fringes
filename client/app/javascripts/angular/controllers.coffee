@@ -190,7 +190,7 @@ define [
         }
       ]
       $scope.fullPathCategoryImages = _.each($scope.categoryImages,(value)->
-        value.src = 'app/images/categories_images/' + value.src
+        value.src = 'app/images/category-images/' + value.src
       )
       #TODO:add real linecatewgoryImage instead $scope.categoryImages categoryImages
       $scope.linecategories = Linecategory.find({

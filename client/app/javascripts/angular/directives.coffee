@@ -609,7 +609,7 @@ define [
                     arrProperty[key]
                   )
                 )
-                that.addImageFill(canvas,that.path[key],"app/images/categories_images/#{scope.menu[key].src}",arrProperty[key].x,arrProperty[key].y,arrProperty[key].width,
+                that.addImageFill(canvas,that.path[key],"app/images/category-images/#{scope.menu[key].src}",arrProperty[key].x,arrProperty[key].y,arrProperty[key].width,
                   arrProperty[key].height,arrProperty[key].k)
               ),this
             canvas : ''

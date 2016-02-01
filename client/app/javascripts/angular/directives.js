@@ -475,7 +475,7 @@
                     var that;
                     that = this;
                     that.path[key] = canvas.path(that.arc(arrProperty[key]));
-                    return that.addImageFill(canvas, that.path[key], "app/images/categories_images/" + scope.menu[key].src, arrProperty[key].x, arrProperty[key].y, arrProperty[key].width, arrProperty[key].height, arrProperty[key].k);
+                    return that.addImageFill(canvas, that.path[key], "app/images/category-images/" + scope.menu[key].src, arrProperty[key].x, arrProperty[key].y, arrProperty[key].width, arrProperty[key].height, arrProperty[key].k);
                   }), this);
                 }
 
