@@ -17,21 +17,7 @@
                   ng-attr-datetime="{{article.link_text}}">..., {{article.link_text}}...</time>
 					</div>
 					<div class="wrapper-conten-block" ng-bind="article.text"></div>
-					<div class="footer-artile">
-						<h3><strong>Совместимость:</strong></h3>
-
-						<p>
-							<strong class="perfect">Идеальны отношения:</strong> Бык, Кабан, Коза, Кролик
-						</p>
-
-						<p>
-							<strong class="good">Хорошо ладят:</strong> Дракон, Петух, Собака. Тигр.
-						</p>
-
-						<p>
-							<strong class="no-good">Лучше не строить отношений:</strong> Змея, Лошадь, Крыса, Обезьяна.
-						</p>
-					</div>
+					<div class="footer-artile" ng-bind="article.text_extention"></div>
 				</div>
 			</div>
 			<div class="wrapper-popular">

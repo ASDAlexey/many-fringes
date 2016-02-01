@@ -3,7 +3,7 @@
     <div class="cell" add-height>
       <h1 class="title">
         <a href="./" class="backward">Назад</a>
-        <span>Гороскопы</span>
+        <span ng-bind="linecategory.name"></span>
       </h1>
 
       <div class="wrapper-content">
@@ -15,7 +15,9 @@
       </div>
       <ul class="sub-category">
         <li ng-repeat="category in linecategory.categories">
-          <cube href-link="{{getHref('japanese_horoscope')}}" text="Перейти" front="cube/japane.jpg"></cube>
+          <cube href-link="{{getHref('japanese_horoscope')}}"
+                text="Перейти"
+                front="category-images/{{category.categoryImage.src}}"></cube>
           <a class="link-text" ui-sref="{{sref({category:'japanese_horoscope'})}}" hover ng-bind="category.name"></a>
         </li>
       </ul>

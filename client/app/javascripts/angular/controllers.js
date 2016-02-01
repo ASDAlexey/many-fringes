@@ -163,7 +163,7 @@
         $scope.fullPathCategoryImages = _.each($scope.categoryImages, function(value) {
           return value.src = 'app/images/categories_images/' + value.src;
         });
-        return $scope.linecategories = Linecategory.find({
+        $scope.linecategories = Linecategory.find({
           filter: {
             include: [
               {
@@ -178,6 +178,10 @@
               }
             ]
           }
+        });
+        return $scope.linecategories.$promise.then(function(data) {
+          console.log('/////');
+          return console.log(data);
         });
       }
     ];

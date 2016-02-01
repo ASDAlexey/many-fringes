@@ -211,6 +211,9 @@ define [
           }
         }
       );
+      $scope.linecategories.$promise.then (data)->
+        console.log '/////'
+        console.log(data)
   ]
   controllers.lineCategoryCtrl = [
     "$scope"

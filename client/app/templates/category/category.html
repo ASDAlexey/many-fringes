@@ -19,7 +19,7 @@
         <li ng-repeat="article in category.articles">
           <cube href-link="{{params.lineCategory}}/{{category.slug}}/{{article.slug}}"
                 text="{{article.link_text}}"
-                front="{{article.articleImage.src}}"></cube>
+                front="article-images/{{article.articleImage.src}}"></cube>
           <a class="link-text"
              ng-href="{{params.lineCategory}}/{{category.slug}}/{{article.slug}}"
              hover
