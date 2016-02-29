@@ -1526,6 +1526,16 @@
         };
       }
     ];
+    directives.contactUs = [
+      function() {
+        return {
+          restrict: "E",
+          templateUrl: "app/templates/contant-us.html",
+          replace: true,
+          link: function(scope, element, attr) {}
+        };
+      }
+    ];
     directive.directive(directives);
     return directive;
   });

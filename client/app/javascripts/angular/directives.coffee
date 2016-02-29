@@ -1420,5 +1420,13 @@ define [
           wh = $($window).height()
           $(element).height(wh - 280)
   ]
+  directives.contactUs = [
+    () ->
+      restrict : "E"
+      templateUrl : "app/templates/contant-us.html"
+      replace:true
+      link : (scope,element,attr)->
+
+  ]
   directive.directive(directives)
   directive

@@ -336,13 +336,16 @@
       "$scope", "$timeout", "$rootScope", "$location", function($scope, $timeout, $rootScope, $location) {
         $scope.absUrl = $location.absUrl();
         $scope.scrollClick = 0;
-        return $scope.scrollToElement = function(element, offset, duration) {
+        $scope.scrollToElement = function(element, offset, duration) {
           $scope.scrollClick++;
           return $scope.scrollProperty = {
             element: element,
             offset: offset,
             duration: duration
           };
+        };
+        return $scope.modalToggle = function() {
+          return $scope.isModalOpen = !$scope.isModalOpen;
         };
       }
     ];
@@ -376,73 +379,8 @@
         ];
       }
     ];
-    controllers.formValidation = [
+    controllers.formValidationCtrl = [
       "$scope", "$http", "$rootScope", "$timeout", function($scope, $http, $rootScope, $timeout) {
-        $scope.choise1 = [
-          {
-            icon: "<span class=\"choise buy\"></span>",
-            name: "Куплю",
-            ticked: true
-          }, {
-            icon: "<span class=\"choise sell\"></span>",
-            name: "Продам",
-            ticked: false
-          }, {
-            icon: "<span class=\"choise exchange\"></span>",
-            name: "Сниму",
-            ticked: false
-          }, {
-            icon: "<span class=\"choise rent\"></span>",
-            name: "Сдам",
-            ticked: false
-          }
-        ];
-        $scope.choise2 = [
-          {
-            icon: "",
-            name: "Вид недвижимости",
-            ticked: true
-          }, {
-            icon: "",
-            name: "Квартиры",
-            ticked: false
-          }, {
-            icon: "",
-            name: "Дома, дачи, коттеджи",
-            ticked: false
-          }, {
-            icon: "",
-            name: "Коммерческая недвижимость",
-            ticked: false
-          }, {
-            icon: "",
-            name: "Земельные участки",
-            ticked: false
-          }, {
-            icon: "",
-            name: "Комнаты",
-            ticked: false
-          }, {
-            icon: "",
-            name: "Гаражи и машиноместа",
-            ticked: false
-          }, {
-            icon: "",
-            name: "Недвижимость за рубежом",
-            ticked: false
-          }
-        ];
-        $scope.choise3 = [
-          {
-            icon: "",
-            name: "На длительный срок",
-            ticked: true
-          }, {
-            icon: "",
-            name: "На короткий срок",
-            ticked: false
-          }
-        ];
         $rootScope.formIsValide = false;
         $scope.form_set_pristine = function(form) {
           if (form.$setPristine) {

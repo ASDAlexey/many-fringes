@@ -1,0 +1,33 @@
+<section class="contact-us" ng-controller="formValidationCtrl">
+  <div class="contact-us__substrate" ng-click="modalToggle()"></div>
+  <div class="contact-us__container">
+    <form class="form-validate"
+          name="formValidate"
+          novalidate>
+      <div class="wrapper-input">
+        <input type="text"
+               name="name"
+               placeholder="Ваше имя"
+               ng-model="dataForm.name"
+               required
+        >
+      </div>
+      <div class="wrapper-input">
+        <input type="text"
+               name="email"
+               placeholder="Ваш email"
+               ng-model="dataForm.email"
+               required>
+      </div>
+      <div class="wrapper-input">
+        <textarea name="msg"
+                  placeholder="Ваше сообщение"
+                  ng-model="dataForm.msg"
+                  required></textarea>
+      </div>
+      <div class="wrapper-send">
+        <button class="send" ng-click="send(dataForm,formValidate)">Отправить</button>
+      </div>
+    </form>
+  </div>
+</section>
